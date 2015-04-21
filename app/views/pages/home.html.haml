@@ -1,0 +1,130 @@
+%br
+
+= block 'blocks/home_top'
+
+.row
+  .col-md-14
+    %h2
+      <a href="#"><i class="fa fa-laptop color"></i> AVI Service</a> <small>Ремонт ноутбуков в Харькове</small>
+    %p
+      Основные направления деятельности компании AVI Service
+    %ul.list-2
+      <li> Продажа ноутбуков, комплектующих, компьютерной и офисной техники;
+      <li> Ремонт ноутбуков;
+      <li> Гарантийное и послегарантийное обслуживание компьютерной техники;
+      <li> Заправка картриджей для принтеров;
+
+  .col-md-10
+    %br
+    =image_tag "about-office-2.jpg", :height => 200
+
+
+
+.block-heading-two
+  %h3
+    <span>Услуги</span>
+
+
+.icon-box-4
+  .row
+    .col-md-8.col-sm-16
+      .icon-box-4-item
+        <i class="fa fa-cog"></i>
+        %h4 Ремонт ноутбуков
+        %p
+          Гарантийный и послегарантийный ремонт ноутбуков всех производителей: Acer, Asus, Dell, HP, Samsung, Lenovo.
+          Диагностика ноутбуков на неисправности.
+
+    .col-md-8.col-sm-16
+      .icon-box-4-item
+        <i class="fa fa-cog"></i>
+        %h4 Замена комплектующих
+        %p
+          У нас вы можете заказать комплектующие на все модели ноутбуков, включая материнские платы, ЖК матрицы, клавиатуры, батареи, блоки питания.
+          Установка комплектующих в ноутбук.
+
+    .col-md-8.col-sm-16
+      .icon-box-4-item
+        <i class="fa fa-cog"></i>
+        %h4
+          <a href="#">Обслуживание</a>
+        %p
+          %ul
+            %li
+              =link_to 'Заправка картриджей', '#'
+            %li
+              =link_to 'Обслуживание ноутбуков', '#'
+
+
+
+
+.block-heading-two
+  %h3
+    <span>Ремонт ноутбуков</span>
+
+.row
+  .col-md-24
+    %ul.list-inline.brands-home
+      %li
+        =image_tag "brands/dell.png", :class=>'big'
+      %li
+        =image_tag "brands/hp.png", :class=>'big'
+      %li
+        =image_tag "brands/acer.png"
+      %li
+        =image_tag "brands/asus.png"
+      %li
+        =image_tag "brands/samsung.png"
+      %li
+        =image_tag "brands/lenovo.png"
+
+%br
+
+.block-heading-two
+  %h3
+    <span>Почему клиенты выбирают нас</span>
+
+.row
+  .col-md-8.col-sm-12
+    %p
+      В компании AVI Service работают опытные квалифицированные специалисты, что позволяет осуществлять качественный и своевременный ремонт ноутбуков.
+
+  .col-md-8.col-sm-12
+    %h4 Наши преимущества
+
+    %ul.list-2
+      <li> Комплексный подход</li>
+      <li> Ориентация на потребности клиента</li>
+      <li> Гибкая ценовая политика</li>
+    %br
+
+    -#%h4
+    -#  <i class="fa fa-angle-right"></i> Minimal Collapsible Group Item #1
+
+
+
+  .col-md-8.col-sm-12
+    %h4 Наша компетенция
+    %ul.list-2
+      <li> Специалисты</li>
+      <li> Оборудование</li>
+    %br
+
+
+
+.block-heading-two
+  %h3
+    <span>Офис в Харькове</span>
+
+
+.contact-us-one
+  .contact-map
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2563.8375219379523!2d36.2294769!3d50.0144005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a1269bbd2cf3%3A0xdf59a004d6cc00b4!2sSerpova+St%2C+4%2C+Kharkiv%2C+Kharkiv+Oblast!5e0!3m2!1sen!2sua!4v1418130310265&language=ru" frameborder="0" style="border:0"></iframe>
+
+
+  =link_to "Контакты", site_page_path('contacts')
+
+%br
+%br
+%br
+

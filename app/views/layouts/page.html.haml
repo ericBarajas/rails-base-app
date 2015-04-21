@@ -1,0 +1,13 @@
+
+- content_for :content do
+  .row
+    .col-md-17
+      = yield
+    .col-md-7
+      .sidebar
+        = block "shared/sidebar"
+
+
+
+
+= render :template => 'layouts/application'

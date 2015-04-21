@@ -1,0 +1,86 @@
+
+#footer
+  .container
+    .row
+      .col-md-6.col-sm-12
+        %h5.bold AVI Service
+        Сервисный центр по ремонту ноутбуков в Харькове
+        %br
+        %br
+        .brand-bg
+          <a class="google-plus" href="#"><i class="fa fa-google-plus circle-3"></i></a>
+          <a class="facebook" href="#"><i class="fa fa-facebook circle-3"></i></a>
+          <a class="twitter" href="#"><i class="fa fa-twitter circle-3"></i></a>
+      .col-md-6.col-sm-12
+        %h5.bold
+          <i class="fa fa-cog"></i>
+          Ремонт ноутбуков
+        %ul
+          %li
+            =link_to "Dell","#"
+          %li
+            =link_to "HP","#"
+          %li
+            =link_to "Acer","#"
+          %li
+            =link_to "Asus","#"
+          %li
+            =link_to "Samsung","#"
+          %li
+            =link_to "Lenovo","#"
+
+      .col-md-6.col-sm-12
+        %h5.bold
+          <i class="fa fa-building-o"></i>
+          Адрес
+        %p.add
+          Харьков, ул. Серповая 4, оф. 211
+        %p.tel
+          <i class="fa fa-calendar"></i>
+          Часы работы :
+          %br
+          ПН-ПТ 9:00 - 18:00
+          %br
+          СБ 9:00 - 15:00
+          %br
+          ВС выходной
+
+      .col-md-6.col-sm-12
+        %p.tel
+          <i class="fa fa-phone"></i>
+          %b Телефоны
+          %br
+          057 765 7676
+          %br
+          099 300 7676
+          %br
+          098 355 7676
+          %br
+          063 355 7676
+          %br
+          %br
+          <i class="fa fa-envelope"></i>
+          <a href="#">info@aviservice.com.ua</a>
+
+    .clearfix
+
+#footer-bottom
+  .container
+    %p.pull-left
+      Copyright © @ #{Time.now.year}. -
+      <a href="#{cms.root_path}">Aviservice.com.ua</a>
+
+    %ul.list-inline.pull-right
+      %li
+        =link_to "Главная", cms.root_path
+      %li
+        =link_to "Услуги", site_page_path('services')
+      %li
+        =link_to "О компании", site_page_path('about')
+      %li
+        =link_to "Контакты", site_page_path('contacts')
+
+
+
+
+= block 'shared/counters'

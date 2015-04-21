@@ -1,0 +1,452 @@
+/* Sticky footer styles -------------------------------------------------- */
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+p{
+  line-height: 25px;
+}
+
+/* common */
+.color {
+  color: $col-primary !important;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+
+/* footer */
+
+#footer {
+  height: 240px;
+  background: none repeat scroll 0 0 #333333;
+  border-top: 3px solid $col-primary;
+  color: #aaaaaa;
+  margin-top: 30px;
+  padding: 15px 0;
+
+  a{
+    color: #aaaaaa;
+
+  }
+}
+
+#footer-bottom {
+  height: 60px;
+  background: none repeat scroll 0 0 #333333;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #cccccc;
+  font-size: 12px;
+  padding: 15px 10px 4px;
+
+  a{
+    color: #CCCCCC;
+
+    &:hover{
+      color: #aaaaaa;
+    }
+
+  }
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+#wrap > .container {
+  padding: 0px 15px 0;
+}
+.container .credit {
+  margin: 20px 0;
+}
+
+#footer > .container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+
+
+/* top bar */
+.top-bar {
+    background: none repeat scroll 0 0 #fdfdfd;
+    border-bottom: 1px solid #f5f5f5;
+    color: #999999;
+    font-size: 13px;
+    line-height: 25px;
+    padding: 6px 0;
+}
+
+
+.topphones{
+  font-weight: normal; font-size: 14px;
+  color: #777777;
+}
+
+/* top part */
+
+.navbar-header{
+
+  a.logo{
+    margin-top:-14px;
+    margin-right: 20px;
+    font-size:27px;
+  }
+
+}
+
+
+
+/* icons */
+.rounded-1 {
+    border-radius: 2px !important;
+}
+
+.square-2 {
+    display: inline-block;
+    height: 25px; width: 25px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.circle-3 {
+    border-radius: 100%;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    width: 35px;
+}
+
+
+/* icons - top bar */
+
+.top-bar {
+  .tb-social {
+    a {
+      background-color: transparent;
+    }
+
+    i {
+      font-size: 13px;
+      margin: 0 2px 0 0;
+      color: #ffffff;
+    }
+  }
+}
+
+
+
+/* social icons - top */
+.brand-bg a i {
+    color: #ffffff;
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 2s ease 0s;
+}
+.brand-bg a i:hover {
+    transition: background 2s ease 0s;
+}
+
+
+
+.brand-bg {
+  a.facebook i {
+    background: none repeat scroll 0 0 #3280e7;
+  }
+  a.facebook i:hover {
+    background: none repeat scroll 0 0 #134fa0;
+  }
+
+  a.twitter i {
+    background: none repeat scroll 0 0 #32c8de;
+  }
+  a.twitter i:hover {
+    background: none repeat scroll 0 0 #188392;
+  }
+
+  a.google-plus i {
+    background: none repeat scroll 0 0 #f96f4a;
+  }
+  a.google-plus i:hover {
+    background: none repeat scroll 0 0 #eb6440;
+  }
+
+  a.skype i {
+    background: none repeat scroll 0 0 #32c8de;
+  }
+  a.skype i:hover {
+    background: none repeat scroll 0 0 #188392;
+  }
+
+  a.youtube i {
+    background: none repeat scroll 0 0 #ed5441;
+  }
+  a.youtube i:hover {
+    background: none repeat scroll 0 0 #b72411;
+  }
+
+}
+
+
+/* social icons - footer */
+
+.brand-bg a i {
+    color: #ffffff;
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 2s ease 0s;
+}
+
+
+
+/* page header */
+
+.page-heading-two {
+  background-color: #fcfcfc;
+  border-bottom: 1px solid #eeeeee;
+  border-top: 1px solid $col-primary;
+  margin-bottom: 30px;
+  padding: 20px 0;
+
+  h1{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #666666;
+    float: left;
+    font-size: 27px;
+    font-weight: 400;
+
+    span {
+      color: #888888;
+      font-size: 13px;
+    }
+  }
+
+  h2 {
+    color: #666666;
+    float: left;
+    font-size: 22px;
+    font-weight: 400;
+
+    span {
+      color: #888888;
+      font-size: 13px;
+    }
+  }
+
+
+
+  .breads {
+    color: #aaaaaa;
+    float: right;
+    font-size: 12px;
+    margin-top: 10px;
+
+    a {
+      color: #888888;
+    }
+  }
+
+
+}
+
+@media (max-width: 767px) {
+  .page-heading-two h2 {
+    float: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-heading-two .breads {
+    float: none;
+    margin-top: 0;
+  }
+}
+
+
+
+/* home page */
+
+
+/* blocks - heading */
+
+.block-heading-two {
+  margin: 10px 0 15px;
+
+  h3 {
+
+    border-bottom: 1px solid #eeeeee;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 36px;
+    margin-bottom: 10px;
+    padding: 0 10px 6px 0;
+
+    span {
+      border-color: $col-primary;
+      border-bottom: 3px solid;
+      padding-bottom: 11px;
+    }
+  }
+
+}
+
+.block-heading-two h3 span{
+  border-color: $col-primary;
+}
+
+
+/* lists */
+.list-1 li:before, .list-2 li:before {
+  color: #51d466;
+}
+
+.list-1, .list-2 {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.list-2 li:before {
+  content: "";
+  float: left;
+  font-family: FontAwesome;
+  margin-left: -20px;
+}
+
+
+/* icon box */
+
+.icon-box-4{
+  margin: 20px 0;
+}
+
+.icon-box-4 .icon-box-4-item {
+  margin: 10px auto;
+
+}
+.icon-box-4 a.icon-box-4-icon {
+  border-radius: 100px;
+  color: #ffffff;
+  background-color: $col-primary;
+  display: inline-block;
+  font-size: 16px;
+  width: 32px; height: 32px;
+  line-height: 32px;
+  margin-right: 5px; margin-bottom:12px;
+  text-align: center;
+
+}
+.icon-box-4 h4 {
+  display: inline;
+}
+.icon-box-4 h4 a, .icon-box-4 p {
+  color: #888888;
+}
+
+
+
+
+/* map on home page */
+
+.contact-us-one .contact-map iframe {
+  border: 0 none;
+  height: 300px;
+  width: 100%;
+}
+
+/* map on the right col */
+.map-right-small iframe{
+  border: 0 none;
+  width: 240px;
+  height: 160px;
+}
+
+
+/* brands on home page */
+
+ul.brands-home{
+  img{
+    height: 26px;
+  }
+  img.big{
+    height: 40px;
+  }
+}
+
+
+/* sidebar */
+
+.sidebar .s-widget {
+  margin-bottom: 20px;
+
+  h5{
+    border-bottom: 1px solid #eeeeee;
+    font-size: 15px;
+    font-weight: 600;
+    padding-bottom: 10px;
+  }
+}
+
+.sidebar .widget-content {
+    margin: 15px 0 10px;
+
+  ul li:before {
+      color: #555555;
+  }
+
+  ul li {
+     margin: 5px 0;
+     padding-left: 5px;
+
+    a {
+       color: #888888;
+   }
+ }
+}
+
+
+
+/* lists */
+
+.list-1, .list-2, .list-3, .list-4, .list-5, .list-6, .list-7, .list-8, .list-9 {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.list-6 li:before {
+    content: "";
+    float: left;
+    font-family: FontAwesome;
+    margin-left: -20px;
+}
