@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
   #devise_for :users
 
+  # optimacms devise
+  devise_for :cms_admin_users, Optimacms::Devise.config
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'home#index'
+  #root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -56,4 +62,15 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  #
+
+  # !!! LAST row
+  mount Optimacms::Engine => "/", :as => "cms"
+
+  # for names
+  root to: "home#index"
+
+
+
 end
