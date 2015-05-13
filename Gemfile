@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'therubyracer', platforms: :ruby
 
 
+gem 'simple_form'
 
 gem 'paperclip', '~> 4.2'
 gem 'kaminari'
