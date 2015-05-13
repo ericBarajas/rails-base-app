@@ -40,6 +40,8 @@ gem 'therubyracer', platforms: :ruby
 
 gem 'paperclip', '~> 4.2'
 gem 'kaminari'
+gem 'kaminari-bootstrap', '~> 3.0.1'
+
 gem 'simple_form'
 gem 'bootstrap3_autocomplete_input'
 gem 'ancestry'
