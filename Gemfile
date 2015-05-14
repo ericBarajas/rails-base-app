@@ -7,7 +7,7 @@ gem 'rails', '4.2.0'
 gem 'mysql2'
 gem 'devise'
 
-gem 'optimacms', '0.1.15'
+gem 'optimacms', '0.1.21'
 
 #
 gem 'haml-rails', '0.5.3'
@@ -15,9 +15,9 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails','4.0.3'
-gem 'font-awesome-rails'
-gem 'bootstrap-sass'
-gem 'compass-rails'
+gem 'font-awesome-rails', '4.3.0.0'
+gem 'bootstrap-sass', '3.3.4.1'
+gem 'compass-rails', '2.0.0'
 
 
 
@@ -44,6 +44,7 @@ gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
 gem 'simple_form'
+gem 'simple_search_filter', '0.0.4'
 gem 'bootstrap3_autocomplete_input'
 gem 'ancestry'
 

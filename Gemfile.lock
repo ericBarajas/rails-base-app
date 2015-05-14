@@ -151,12 +151,12 @@ GEM
     net-ssh (2.9.2)
     nokogiri (1.6.6.2-x86-mingw32)
       mini_portile (~> 0.6.0)
-    optimacms (0.1.15)
+    optimacms (0.1.21)
       ancestry
-      bootstrap-sass
+      bootstrap-sass (~> 3.3.4)
       coffee-rails
       devise
-      font-awesome-rails
+      font-awesome-rails (~> 4.3)
       haml-rails
       jquery-rails (~> 4.0.3)
       jquery-ui-rails
@@ -164,6 +164,7 @@ GEM
       rails (>= 4.1)
       sass-rails (~> 4.0.3)
       simple_form
+      simple_search_filter (= 0.0.4)
       uglifier
     orm_adapter (0.5.0)
     paperclip (4.2.1)
@@ -226,6 +227,8 @@ GEM
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
+    simple_search_filter (0.0.4)
+      rails (~> 4.2.0)
     sprockets (2.11.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -261,32 +264,33 @@ PLATFORMS
 
 DEPENDENCIES
   ancestry
-  bootstrap-sass
+  bootstrap-sass (= 3.3.4.1)
   bootstrap3_autocomplete_input
   capistrano (~> 3.1)
   capistrano-rails (~> 1.1)
   capistrano-rvm (~> 0.1)
   capybara
   coffee-rails
-  compass-rails
+  compass-rails (= 2.0.0)
   database_cleaner
   devise
   el_finder (= 1.1.12)
   factory_girl_rails
   faker
-  font-awesome-rails
+  font-awesome-rails (= 4.3.0.0)
   haml-rails (= 0.5.3)
   jbuilder (~> 2.0)
   jquery-rails (= 4.0.3)
   kaminari
   kaminari-bootstrap (~> 3.0.1)
   mysql2
-  optimacms (= 0.1.15)
+  optimacms (= 0.1.21)
   paperclip (~> 4.2)
   rails (= 4.2.0)
   rspec-rails (= 3.1.0)
   sass-rails (~> 4.0.3)
   simple_form
+  simple_search_filter (= 0.0.4)
   therubyracer
   tinymce-rails (= 4.1.6)
   tzinfo-data
