@@ -7,13 +7,16 @@ gem 'rails', '4.2.0'
 gem 'mysql2'
 gem 'devise'
 
-gem 'optimacms', '0.1.21'
+gem 'optimacms', '0.1.24'
 
 #
-gem 'haml-rails', '0.5.3'
+#gem 'haml-rails', '0.5.3'
+gem 'haml', '4.0.6'
+gem 'haml-rails', '0.9.0'
+
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier'
-gem 'coffee-rails'
+gem 'coffee-rails', '4.1.0'
 gem 'jquery-rails','4.0.3'
 gem 'font-awesome-rails', '4.3.0.0'
 gem 'bootstrap-sass', '3.3.4.1'
@@ -37,14 +40,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'therubyracer', platforms: :ruby
 
 
-gem 'simple_form'
-
 gem 'paperclip', '~> 4.2'
 gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
 gem 'simple_form'
-gem 'simple_search_filter', '0.0.4'
+gem 'simple_search_filter', '0.0.5'
 gem 'bootstrap3_autocomplete_input'
 gem 'ancestry'
 
