@@ -11,7 +11,19 @@ Rails.application.configure do
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
+  #config.action_controller.perform_caching = false
+
+  # cache
   config.action_controller.perform_caching = false
+
+  #config.cache_store = :redis_store, 'redis://localhost:6379/cms_tpl_dev/cache', { expires_in: (60*24*7).minutes }
+  #config.cache_store = :redis_store, { :host => "localhost", :port => 6379, :db => 0, :namespace => "cms_tpl_dev", :expires_in => 90.minutes }
+
+  #config.action_dispatch.rack_cache = {
+  #    metastore:   'redis://localhost:6379/0/cms_tpl_dev',
+  #    entitystore: 'redis://localhost:6379/0/cms_tpl_dev'
+  #}
+
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -21,6 +33,10 @@ Rails.application.configure do
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
+
+  #
+  config.serve_static_assets = false
+
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large

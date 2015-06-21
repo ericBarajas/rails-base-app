@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :cms_admin_users, Optimacms::Devise.config
 
 
+  get 'home/hello'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -26,5 +26,7 @@ module Myapp
 
     #
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
+
+
   end
 end

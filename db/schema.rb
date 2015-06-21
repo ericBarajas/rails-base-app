@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513224341) do
+ActiveRecord::Schema.define(version: 20150612011036) do
 
   create_table "cms_languages", force: :cascade do |t|
     t.string  "title",     limit: 250
@@ -58,16 +58,17 @@ ActiveRecord::Schema.define(version: 20150513224341) do
     t.integer  "enabled",           limit: 1,   default: 1,     null: false
   end
 
+  add_index "cms_pages", ["name"], name: "index_cms_pages_on_name", using: :btree
   add_index "cms_pages", ["parent_id"], name: "parent_id", using: :btree
   add_index "cms_pages", ["status"], name: "status", using: :btree
   add_index "cms_pages", ["url"], name: "url", using: :btree
 
   create_table "cms_pages_translation", force: :cascade do |t|
-    t.integer "item_id",           limit: 4,   default: 0, null: false
+    t.integer "item_id",           limit: 4,     default: 0, null: false
     t.integer "page_id",           limit: 4
-    t.string  "lang",              limit: 5,               null: false
+    t.string  "lang",              limit: 5,                 null: false
     t.string  "meta_title",        limit: 255
-    t.string  "meta_description",  limit: 255
+    t.text    "meta_description",  limit: 65535
     t.string  "meta_keywords",     limit: 255
     t.string  "template_filename", limit: 255
   end

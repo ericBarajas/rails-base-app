@@ -2,12 +2,12 @@ source 'https://rubygems.org'
 
 ruby "2.1.5"
 
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.1'
 
 gem 'mysql2'
 gem 'devise'
 
-gem 'optimacms', '0.1.25'
+gem 'optimacms', '0.1.39'
 
 #
 gem 'haml', '4.0.6'
@@ -26,7 +26,8 @@ gem 'bootstrap-sass', '3.3.4.1'
 gem 'compass-rails', '2.0.0'
 
 
-
+gem 'rack-cache'
+gem 'redis-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 #gem 'turbolinks'
@@ -48,8 +49,8 @@ gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
 gem 'simple_form'
-gem 'simple_search_filter', '0.0.5'
-gem 'bootstrap3_autocomplete_input'
+gem 'simple_search_filter', '0.0.11'
+gem 'bootstrap3_autocomplete_input', '0.1.1'
 gem 'ancestry'
 
 
