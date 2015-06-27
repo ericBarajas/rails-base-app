@@ -2,7 +2,7 @@
 
 ## Quick start
 
-* Clone the git repo - `git clone https://github.com/maxivak/myrailsdemoapp.git` - or [download it](https://github.com/maxivak/myrailsdemoapp/zipball/master)
+* Clone the git repo - `git clone https://github.com/maxivak/myrailsdemoapp.git` - or [download it](https://github.com/maxivak/rails-tpl/archive/master.zip)
 
 * Run `bundle install`
 * Run `rake db:migrate`
