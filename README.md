@@ -2,7 +2,11 @@
 
 ## Quick start
 
-* Clone the git repo - `git clone https://github.com/maxivak/myrailsdemoapp.git` - or [download it](https://github.com/maxivak/rails-tpl/archive/master.zip)
+* Clone the git repo
+```ruby
+git clone https://github.com/maxivak/rails-tpl
+```
+or [download it](https://github.com/maxivak/rails-tpl/archive/master.zip)
 
 * Create database
 * Import mysql dump into database
@@ -12,12 +16,6 @@
 * Run `rake db:migrate`
 
 
-Run your server
-<pre>
-rails s
-</pre>
-
-Check at [http://localhost:3000](http://localhost:3000)
 
 
 ## Requirements
