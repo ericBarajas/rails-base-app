@@ -1,25 +1,21 @@
-source 'https://rubygems.org'
+﻿source 'https://rubygems.org'
 
 ruby "2.1.5"
 
 gem 'rails', '4.2.1'
 
 gem 'mysql2'
-gem 'devise'
 
-gem 'optimacms', '0.1.39'
+gem 'optimacms', '0.1.43'
+
+gem 'rails_themes_bootstrap', '0.0.2',:git => 'git://github.com/maxivak/rails_themes_bootstrap.git'
+
 
 #
-gem 'haml', '4.0.6'
-gem 'haml-rails', '0.9.0'
-
-gem 'sass-rails', '~> 4.0.3'
+gem 'haml-rails', '~>0.9.0'
+gem 'sass-rails', '~>4.0.3'
 gem 'uglifier'
-
-# coffee sucks!!!! drink water!!! pure water!!!
-#gem 'coffee-rails'
-#gem 'coffee-rails', '4.1.0'
-
+gem 'coffee-rails'
 gem 'jquery-rails','4.0.3'
 gem 'font-awesome-rails', '4.3.0.0'
 gem 'bootstrap-sass', '3.3.4.1'
@@ -28,6 +24,10 @@ gem 'compass-rails', '2.0.0'
 
 gem 'rack-cache'
 gem 'redis-rails'
+
+#
+gem 'devise'
+
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 #gem 'turbolinks'
@@ -61,6 +61,16 @@ gem 'tinymce-rails', '4.1.6'
 gem 'el_finder', '1.1.12'
 
 
+#
+#gem 'callback_request_bootstrap'
+
+#
+gem 'redis'
+gem "simple_events_redis", '1.0.1'
+#gem "resque", '1.25.1'
+#gem "devise-async"
+
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
@@ -86,9 +96,9 @@ end
 
 # deployment
 group :development do
-  gem 'capistrano',  '~> 3.1'
-  gem 'capistrano-rails', '~> 1.1'
-  #gem 'capistrano-bundler', '~> 1.1'
+  gem 'capistrano',  '3.4.0'
+  gem 'capistrano-rails', '1.1.3'
+  gem 'capistrano-bundler', '~> 1.1'
   gem 'capistrano-rvm',   '~> 0.1'
 
   #gem 'capistrano-passenger'

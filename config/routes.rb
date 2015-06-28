@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   # optimacms devise
   devise_for :cms_admin_users, Optimacms::Devise.config
 
-
-  get 'home/hello'
-
+  match 'demo/:action', to: 'demo#action', via: [:get, :post], as: 'demo'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -71,7 +69,6 @@ Rails.application.routes.draw do
 
   # for names
   root to: "home#index"
-
 
 
 end

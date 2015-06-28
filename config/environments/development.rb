@@ -1,4 +1,4 @@
-Rails.application.configure do
+﻿Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -11,11 +11,12 @@ Rails.application.configure do
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
-  #config.action_controller.perform_caching = false
+
+
+  config.action_controller.perform_caching = false
+  config.action_view.cache_template_loading = false
 
   # cache
-  config.action_controller.perform_caching = false
-
   #config.cache_store = :redis_store, 'redis://localhost:6379/cms_tpl_dev/cache', { expires_in: (60*24*7).minutes }
   #config.cache_store = :redis_store, { :host => "localhost", :port => 6379, :db => 0, :namespace => "cms_tpl_dev", :expires_in => 90.minutes }
 
