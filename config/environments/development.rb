@@ -36,7 +36,7 @@
   config.active_record.migration_error = :page_load
 
   #
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 
 
   # Debug mode disables concatenation and preprocessing of assets.
