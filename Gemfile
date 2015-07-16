@@ -6,7 +6,7 @@ gem 'rails', '4.2.1'
 
 gem 'mysql2'
 
-gem 'optimacms', '0.1.43'
+gem 'optimacms', '0.1.44'
 
 gem 'rails_themes_bootstrap', '0.0.2',:git => 'git://github.com/maxivak/rails_themes_bootstrap.git'
 
@@ -49,8 +49,8 @@ gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
 gem 'simple_form'
-gem 'simple_search_filter', '0.0.11'
-gem 'bootstrap3_autocomplete_input', '0.1.1'
+gem 'simple_search_filter', '0.0.29'
+gem 'bootstrap3_autocomplete_input', '0.1.7'
 gem 'ancestry'
 
 
@@ -73,7 +73,7 @@ gem "simple_events_redis", '1.0.1'
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 
 
