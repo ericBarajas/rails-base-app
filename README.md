@@ -1,5 +1,7 @@
 ﻿# My Rails demo app
 
+View demo online: http://tpl.optimacms.com
+
 ## Quick start
 
 * Clone the git repo
