@@ -33,7 +33,7 @@
 
 
   def render_error(status, exception)
-    #$Mylog.log_event 'error', 'exception', "#{status}, url: #{request.original_url}, referer: #{request.env["HTTP_REFERER"]}, ip: #{request.env["REMOTE_ADDR"]}, #{request.env["HTTP_X_FORWARDED_FOR"]}, #{exception.inspect}, #{(exception.backtrace || []).join('\n').truncate(8000)}"
+    $Mylog.log_event 'error', 'exception', "#{status}, url: #{request.original_url}, referer: #{request.env["HTTP_REFERER"]}, ip: #{request.env["REMOTE_ADDR"]}, #{request.env["HTTP_X_FORWARDED_FOR"]}, #{exception.inspect}, #{(exception.backtrace || []).join('\n').truncate(8000)}"
 
     respond_to do |format|
       format.html { render template: "errors/error_#{status}", status: status }

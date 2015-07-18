@@ -3,6 +3,9 @@ lock '3.4.0'
 
 set :rvm_ruby_version, '2.1.5'
 set :rvm_type, :user
+set :ssh_options, { forward_agent: true, user: 'uadmin' }
+#set :pty, true
+
 
 #
 set :rsync_options, %w[
@@ -22,7 +25,10 @@ role :web, %w{11.22.33.44}
 role :db,  %w{11.22.33.44}
 
 
+#
+server '11.22.33.44', user: 'myuser', roles: %w{web}, primary: true
 
+#
 set :repo_url, 'ssh://myserver.com/repos/sitename.git'
 #set :repo_url, '.'
 
@@ -46,18 +52,23 @@ set :scm, :git
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
-set :keep_releases, 25
+set :keep_releases, 5
 
 
-#
+
+# Add necessary files and directories which can be changed on server.
+my_config_dirs = %W{config config/environments}
+my_config_files = %W{config/database.yml config/secrets.yml config/environments/#{fetch(:stage)}.rb }
+my_app_dirs = %W{public/system public/uploads public/img app/views}
+
+
+# do not change below
 set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle')
-set :linked_dirs, fetch(:linked_dirs) + %w{public/system public/img public/uploads app/views}
-filename_env = "config/environments/#{fetch(:stage)}.rb"
-set :linked_files, fetch(:linked_files, []).push(filename_env, 'config/database.yml', 'config/secrets.yml')
+set :linked_dirs, fetch(:linked_dirs) + my_app_dirs
+set :linked_files, fetch(:linked_files, []) + my_config_files
 
-set :config_dirs, %W{config config/environments/#{fetch(:stage)} public/system public/uploads public/img}
-set :config_files, %w{config/database.yml config/secrets.yml}
-set :config_files, fetch(:config_files, []).push(filename_env)
+set :config_dirs,  my_config_dirs+my_app_dirs
+set :config_files, my_config_files
 
 
 # precompile assets - locations that we will look for changed assets to determine whether to precompile
@@ -106,26 +117,6 @@ namespace :deploy do
   end
 
 end
-
-
-
-
-=begin
-namespace :deploy do
-
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
-    end
-  end
-
-end
-
-=end
-
 
 
 

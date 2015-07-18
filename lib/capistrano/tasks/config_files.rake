@@ -7,6 +7,7 @@ namespace :deploy do
       # create dirs
       fetch(:config_dirs).each do |dirname|
         path = File.join shared_path, dirname
+
         execute "mkdir -p #{path}"
       end
 

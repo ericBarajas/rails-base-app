@@ -8,7 +8,7 @@ gem 'mysql2'
 
 gem 'optimacms', '0.1.44'
 
-gem 'rails_themes_bootstrap', '0.0.2',:git => 'git://github.com/maxivak/rails_themes_bootstrap.git'
+#gem 'rails_themes_bootstrap', '0.0.2',:git => 'git://github.com/maxivak/rails_themes_bootstrap.git'
 
 
 #
