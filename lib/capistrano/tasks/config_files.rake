@@ -1,4 +1,4 @@
-# copy config files
+﻿# copy config files
 namespace :deploy do
   desc 'Copy files from application to shared directory'
   ## copy the files to the shared directories
@@ -7,7 +7,6 @@ namespace :deploy do
       # create dirs
       fetch(:config_dirs).each do |dirname|
         path = File.join shared_path, dirname
-
         execute "mkdir -p #{path}"
       end
 

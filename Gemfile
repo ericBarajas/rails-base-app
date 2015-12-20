@@ -6,7 +6,7 @@ gem 'rails', '4.2.1'
 
 gem 'mysql2'
 
-gem 'optimacms', '0.1.44'
+gem 'optimacms', '0.1.51'
 
 #gem 'rails_themes_bootstrap', '0.0.2',:git => 'git://github.com/maxivak/rails_themes_bootstrap.git'
 
@@ -49,7 +49,7 @@ gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
 gem 'simple_form'
-gem 'simple_search_filter', '0.0.29'
+gem 'simple_search_filter', '0.0.30'
 gem 'bootstrap3_autocomplete_input', '0.1.7'
 gem 'ancestry'
 
