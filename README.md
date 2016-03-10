@@ -1,4 +1,4 @@
-﻿# My Rails demo app
+# My Rails demo app
 
 View demo online: http://tpl.optimacms.com
 
@@ -27,6 +27,13 @@ or [download it](https://github.com/maxivak/rails-tpl/archive/master.zip)
 * Redis server
 * Imagemagick (For uploading pictures)
 
+
+
+## Bootstrap v4 alpha
+
+```
+git clone -b bootstrapv4alpha  https://github.com/maxivak/rails-tpl
+```
 
 
 
