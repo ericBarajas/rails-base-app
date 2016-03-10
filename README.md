@@ -32,7 +32,7 @@ or [download it](https://github.com/maxivak/rails-tpl/archive/master.zip)
 ## Bootstrap v4 alpha
 
 ```
-git clone -b bootstrapv4alpha  https://github.com/maxivak/rails-tpl
+git clone -b bootstrap_v4_alpha  https://github.com/maxivak/rails-tpl
 ```
 
 
