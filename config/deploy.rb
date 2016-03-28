@@ -59,7 +59,7 @@ set :keep_releases, 5
 # Add necessary files and directories which can be changed on server.
 my_config_dirs = %W{config config/environments}
 my_config_files = %W{config/database.yml config/secrets.yml config/environments/#{fetch(:stage)}.rb }
-my_app_dirs = %W{public/system public/uploads public/img app/views}
+my_app_dirs = %W{public/system public/uploads public/img}
 
 
 # do not change below
