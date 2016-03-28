@@ -3,7 +3,7 @@ lock '3.4.0'
 
 set :rvm_ruby_version, '2.1.5'
 set :rvm_type, :user
-set :ssh_options, { forward_agent: true, user: 'uadmin' }
+set :ssh_options, { forward_agent: true, user: 'YOUR_DEPLOY_USER' }
 #set :pty, true
 
 
