@@ -1,20 +1,49 @@
 ﻿source 'https://rubygems.org'
 
-ruby "2.1.7"
+ruby "2.2.4"
 
-gem 'rails', '4.2.4'
+gem 'rails', '4.2.5.2'
+
 
 gem 'mysql2', '0.3.20'
 
-gem 'optimacms', '0.2.1', path: '../optimacms'
+#gem 'net-ssh', '3.1.1'
+gem 'net-ssh', '3.1.1', :git => 'https://github.com/maxivak/net-ssh', :branch => '3-1-release'
+
+#gem 'net-ssh', '4.0.0.alpha3'
+
+#
+gem 'devise', '3.5.6'
+gem 'devise-async'
+gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-linkedin'
+#gem 'certified'
+
+#
+gem 'activeadmin', '1.0.0.pre2'
+#gem "activeadmin-sortable-tree", :github => "nebirhos/activeadmin-sortable-tree", :branch => "master"
+gem "activeadmin-sortable-tree", :github => "maxivak/activeadmin-sortable-tree", :branch => "master"
+
+
+gem 'optimacms', '0.2.2'
+#gem 'optimacms', '0.2.1', path: '../optimacms'
+#gem 'optimacms', '0.2.1', :git => 'https://github.com/maxivak/optimacms.git', :branch => 'bootstrap_v4_alpha'
 
 #gem 'rails_themes_bootstrap', '0.0.2',:git => 'git://github.com/maxivak/rails_themes_bootstrap.git'
+
 
 
 #
 gem 'haml-rails', '~>0.9.0'
 
 gem 'uglifier'
+
+gem 'coffee-script-source', '1.8.0'
+
 gem 'coffee-rails'
 gem 'jquery-rails','4.0.3'
 gem 'font-awesome-rails', '4.3.0.0'
@@ -38,12 +67,15 @@ gem 'bootstrap-sass', '3.3.4.1'
 
 #gem 'bootstrap', '~> 4.0.0.alpha3'
 
+
+
+#
+gem 'rails-i18n', '4.0.8' # For 4.0.x
+
 #
 gem 'rack-cache'
 gem 'redis-rails'
 
-#
-gem 'devise'
 
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -68,6 +100,8 @@ gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'simple_form'
 gem 'simple_search_filter', '0.0.31'
 gem 'bootstrap3_autocomplete_input', '0.1.7'
+
+
 gem 'ancestry'
 
 
@@ -84,9 +118,7 @@ gem 'el_finder', '1.1.12'
 #
 gem 'redis'
 gem "simple_events_redis", '1.0.1'
-#gem "resque", '1.25.1'
-#gem "devise-async"
-
+gem 'sidekiq'
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
