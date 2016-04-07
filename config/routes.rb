@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   devise_for :cms_admin_users, Optimacms::Devise.config
 
   match 'demo/:action', to: 'demo#action', via: [:get, :post], as: 'demo'
-  match 'demo4/:action', to: 'demo4#action', via: [:get, :post], as: 'demo4'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
