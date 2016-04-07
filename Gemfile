@@ -1,27 +1,44 @@
 ﻿source 'https://rubygems.org'
 
-ruby "2.1.5"
+ruby "2.1.7"
 
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.4'
 
-gem 'mysql2'
+gem 'mysql2', '0.3.20'
 
-gem 'optimacms', '0.1.51'
+gem 'optimacms', '0.2.1', path: '../optimacms'
 
 #gem 'rails_themes_bootstrap', '0.0.2',:git => 'git://github.com/maxivak/rails_themes_bootstrap.git'
 
 
 #
 gem 'haml-rails', '~>0.9.0'
-gem 'sass-rails', '~>4.0.3'
+
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails','4.0.3'
 gem 'font-awesome-rails', '4.3.0.0'
+
+gem 'sass-rails', '5.0.4'
+gem 'compass-rails', '2.0.5'
+gem 'sprockets-rails', '2.3.3'
+
 gem 'bootstrap-sass', '3.3.4.1'
-gem 'compass-rails', '2.0.0'
 
 
+
+# bootstrap v4 alpha
+#gem 'jekyll', '~> 3.0.1'
+#gem 'jekyll-redirect-from', '~> 0.9.0'
+#gem 'jekyll-sitemap', '~> 0.9.0'
+#gem 'sass', '>= 3.4.19'
+#gem 'sass-rails', '4.0.3'
+#gem 'scss_lint', '~> 0.43'
+
+
+#gem 'bootstrap', '~> 4.0.0.alpha3'
+
+#
 gem 'rack-cache'
 gem 'redis-rails'
 
@@ -49,7 +66,7 @@ gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
 gem 'simple_form'
-gem 'simple_search_filter', '0.0.30'
+gem 'simple_search_filter', '0.0.31'
 gem 'bootstrap3_autocomplete_input', '0.1.7'
 gem 'ancestry'
 

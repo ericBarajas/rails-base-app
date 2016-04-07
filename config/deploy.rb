@@ -3,7 +3,7 @@ lock '3.4.0'
 
 set :rvm_ruby_version, '2.1.5'
 set :rvm_type, :user
-set :ssh_options, { forward_agent: true, user: 'YOUR_DEPLOY_USER' }
+set :ssh_options, { forward_agent: true, user: 'uadmin' }
 #set :pty, true
 
 
@@ -59,7 +59,7 @@ set :keep_releases, 5
 # Add necessary files and directories which can be changed on server.
 my_config_dirs = %W{config config/environments}
 my_config_files = %W{config/database.yml config/secrets.yml config/environments/#{fetch(:stage)}.rb }
-my_app_dirs = %W{public/system public/uploads public/img}
+my_app_dirs = %W{public/system public/uploads public/img app/views}
 
 
 # do not change below
