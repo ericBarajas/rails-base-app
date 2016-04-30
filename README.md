@@ -17,7 +17,16 @@ or [download it](https://github.com/maxivak/rails-tpl/archive/master.zip)
 * Run `bundle install`
 * Run `rake db:migrate`
 
+* Access site
 
+* Access admin area:
+```
+http://localhost:3000/admin
+webmaster@example.com
+password
+```
+
+* Change admin password
 
 
 ## Requirements

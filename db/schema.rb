@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20150612011036) do
   create_table "cms_languages", force: :cascade do |t|
     t.string  "title",     limit: 250
     t.string  "lang",      limit: 4
-    t.boolean "enabled",   limit: 1,   default: true,              null: false
+    t.boolean "enabled",               default: true,              null: false
     t.string  "charset",   limit: 15,  default: "utf8_unicode_ci", null: false
     t.string  "locale",    limit: 255,                             null: false
     t.string  "lang_html", limit: 10,                              null: false
@@ -44,14 +44,14 @@ ActiveRecord::Schema.define(version: 20150612011036) do
     t.string   "parsed_url",        limit: 255
     t.integer  "parent_id",         limit: 4,   default: 0,     null: false
     t.string   "view_path",         limit: 255
-    t.boolean  "is_translated",     limit: 1,   default: false, null: false
+    t.boolean  "is_translated",                 default: false, null: false
     t.integer  "status",            limit: 4,   default: 0,     null: false
     t.integer  "pos",               limit: 4,   default: 0,     null: false
     t.string   "redir_url",         limit: 255
     t.integer  "template_id",       limit: 4
     t.integer  "layout_id",         limit: 4
     t.integer  "owner",             limit: 4
-    t.boolean  "is_folder",         limit: 1,   default: false, null: false
+    t.boolean  "is_folder",                     default: false, null: false
     t.string   "controller_action", limit: 255
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
@@ -86,11 +86,11 @@ ActiveRecord::Schema.define(version: 20150612011036) do
     t.integer  "type_id",       limit: 1
     t.string   "tpl_format",    limit: 255
     t.integer  "pos",           limit: 4
-    t.boolean  "is_translated", limit: 1,   default: false, null: false
+    t.boolean  "is_translated",             default: false, null: false
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
-    t.boolean  "is_folder",     limit: 1,   default: false, null: false
-    t.boolean  "enabled",       limit: 1,   default: true,  null: false
+    t.boolean  "is_folder",                 default: false, null: false
+    t.boolean  "enabled",                   default: true,  null: false
     t.string   "ancestry",      limit: 255
   end
 
