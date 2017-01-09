@@ -2,10 +2,22 @@
 
 ruby "2.3.3"
 
-gem 'rails', '5.0'
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
 
 
-gem 'mysql2' #, '0.3.20'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 5.0.1'
+
+# Use Puma as the app server
+gem 'puma', '~> 3.0'
+
+#
+gem 'mysql2'
+
+
 
 #gem 'net-ssh', '3.1.1'
 gem 'net-ssh', '3.1.1', :git => 'https://github.com/maxivak/net-ssh', :branch => '3-1-release'
@@ -13,8 +25,17 @@ gem 'net-ssh', '3.1.1', :git => 'https://github.com/maxivak/net-ssh', :branch =>
 
 #
 gem 'devise', '4.2.0' #, '3.5.6'
-gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
 
+if Bundler::WINDOWS
+  #gem 'bcrypt-ruby', '~> 3.0.0', require: false
+  gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'
+else
+  gem 'bcrypt', '~> 3.1.10', require: false
+end
+
+#gem 'bcrypt', '~> 3.1.7'
+
+#
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
@@ -46,20 +67,18 @@ gem 'globalize-accessors'
 #
 gem 'haml-rails', '~>0.9.0'
 
-gem 'uglifier'
-
-gem 'coffee-script-source'#, '1.8.0'
-
-gem 'coffee-rails'
+#gem 'coffee-script-source'#, '1.8.0'
+gem 'coffee-script-source', '1.8.0'
+gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails' #,'4.0.3'
-gem 'font-awesome-rails'#, '4.3.0.0'
-
-gem 'sass-rails'#, '5.0.4'
+gem 'sass-rails', '~> 5.0'
 gem 'compass-rails'#, '2.0.5'
 gem 'sprockets-rails'#, '2.3.3'
+gem 'uglifier', '>= 1.3.0'
+gem 'font-awesome-rails'#, '4.3.0.0'
 
+# bootstrap
 gem 'bootstrap-sass'#, '3.3.4.1'
-
 
 
 # bootstrap v4 alpha
@@ -84,8 +103,9 @@ gem 'redis-rails'
 
 
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-#gem 'turbolinks'
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+#gem 'turbolinks', '~> 5'
+
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder' #, '~> 2.0'
@@ -129,7 +149,19 @@ gem 'sidekiq'
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platform: :mri
+end
+
+group :development do
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'web-console', '>= 3.3.0'
+end
+
 
 
 
