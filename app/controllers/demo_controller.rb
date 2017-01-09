@@ -1,4 +1,4 @@
-class DemoController < ApplicationController
+class DemoController < SiteBaseController
   layout 'basic'
 
   def index

@@ -43,4 +43,14 @@
 
 
 
+  ###
+  def set_locale
+    @lang = params[:lang] || 'en'
+    params[:lang] ||= @lang
+
+    # set locale
+    I18n.locale = @lang.to_sym
+
+  end
+
 end
