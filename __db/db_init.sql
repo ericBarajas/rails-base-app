@@ -1,23 +1,23 @@
-﻿-- phpMyAdmin SQL Dump
--- version 3.5.8
+-- phpMyAdmin SQL Dump
+-- version 4.4.13.1deb1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 14, 2015 at 01:50 AM
--- Server version: 5.6.12
--- PHP Version: 5.5.12
+-- Generation Time: Jan 05, 2017 at 04:55 PM
+-- Server version: 5.6.31-0ubuntu0.15.10.1
+-- PHP Version: 5.6.11-1ubuntu3.4
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `my_cms_tpl`
+-- Database: `my_tpl_init`
 --
 
 -- --------------------------------------------------------
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `cms_languages`;
 CREATE TABLE IF NOT EXISTS `cms_languages` (
-  `id` int(3) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(3) unsigned NOT NULL,
   `title` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
   `lang` varchar(4) COLLATE utf8_unicode_ci DEFAULT NULL,
   `enabled` tinyint(1) unsigned NOT NULL DEFAULT '1',
@@ -36,10 +36,8 @@ CREATE TABLE IF NOT EXISTS `cms_languages` (
   `locale` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `lang_html` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `pos` int(11) NOT NULL,
-  `countries` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `idxLang` (`lang`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+  `countries` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `cms_languages`
@@ -57,15 +55,14 @@ INSERT INTO `cms_languages` (`id`, `title`, `lang`, `enabled`, `charset`, `local
 
 DROP TABLE IF EXISTS `cms_mediafiles`;
 CREATE TABLE IF NOT EXISTS `cms_mediafiles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `media_type` int(11) DEFAULT NULL,
   `path` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `photo_file_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `photo_content_type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `photo_file_size` int(11) DEFAULT NULL,
-  `photo_updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+  `photo_updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `cms_mediafiles`
@@ -86,7 +83,7 @@ INSERT INTO `cms_mediafiles` (`id`, `media_type`, `path`, `photo_file_name`, `ph
 
 DROP TABLE IF EXISTS `cms_pages`;
 CREATE TABLE IF NOT EXISTS `cms_pages` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -106,12 +103,8 @@ CREATE TABLE IF NOT EXISTS `cms_pages` (
   `controller_action` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
-  `enabled` tinyint(3) unsigned NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`),
-  KEY `parent_id` (`parent_id`),
-  KEY `status` (`status`),
-  KEY `url` (`url`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci PACK_KEYS=0 AUTO_INCREMENT=154 ;
+  `enabled` tinyint(3) unsigned NOT NULL DEFAULT '1'
+) ENGINE=InnoDB AUTO_INCREMENT=154 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci PACK_KEYS=0;
 
 --
 -- Dumping data for table `cms_pages`
@@ -137,19 +130,15 @@ INSERT INTO `cms_pages` (`id`, `title`, `name`, `url`, `url_parts_count`, `url_v
 
 DROP TABLE IF EXISTS `cms_pages_translation`;
 CREATE TABLE IF NOT EXISTS `cms_pages_translation` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `item_id` int(10) unsigned NOT NULL DEFAULT '0',
   `page_id` int(11) DEFAULT NULL,
   `lang` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
   `meta_title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `meta_description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `meta_keywords` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `template_filename` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `template` (`template_filename`),
-  KEY `item_id` (`item_id`),
-  KEY `lang` (`lang`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci PACK_KEYS=0 AUTO_INCREMENT=348 ;
+  `template_filename` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=348 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci PACK_KEYS=0;
 
 --
 -- Dumping data for table `cms_pages_translation`
@@ -182,12 +171,66 @@ INSERT INTO `cms_pages_translation` (`id`, `item_id`, `page_id`, `lang`, `meta_t
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cms_resources`
+--
+
+DROP TABLE IF EXISTS `cms_resources`;
+CREATE TABLE IF NOT EXISTS `cms_resources` (
+  `id` int(11) unsigned NOT NULL,
+  `name` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `def_value` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `enabled` tinyint(1) unsigned NOT NULL DEFAULT '1'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cms_resource_categories`
+--
+
+DROP TABLE IF EXISTS `cms_resource_categories`;
+CREATE TABLE IF NOT EXISTS `cms_resource_categories` (
+  `id` int(10) unsigned NOT NULL,
+  `name` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `cms_resource_categories`
+--
+
+INSERT INTO `cms_resource_categories` (`id`, `name`) VALUES
+(4, 'Menu'),
+(3, 'System Messages'),
+(7, 'Common'),
+(1, 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cms_resource_translations`
+--
+
+DROP TABLE IF EXISTS `cms_resource_translations`;
+CREATE TABLE IF NOT EXISTS `cms_resource_translations` (
+  `id` int(11) NOT NULL,
+  `cms_resource_id` int(11) NOT NULL,
+  `locale` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `content` text COLLATE utf8_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `cms_templates`
 --
 
 DROP TABLE IF EXISTS `cms_templates`;
 CREATE TABLE IF NOT EXISTS `cms_templates` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `basename` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -201,12 +244,8 @@ CREATE TABLE IF NOT EXISTS `cms_templates` (
   `updated_at` datetime NOT NULL,
   `is_folder` tinyint(1) NOT NULL DEFAULT '0',
   `enabled` tinyint(1) unsigned NOT NULL DEFAULT '1',
-  `ancestry` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `ancestry` (`ancestry`),
-  KEY `basepath` (`basepath`),
-  KEY `pos` (`pos`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci PACK_KEYS=0 AUTO_INCREMENT=129 ;
+  `ancestry` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci PACK_KEYS=0;
 
 --
 -- Dumping data for table `cms_templates`
@@ -227,12 +266,10 @@ INSERT INTO `cms_templates` (`id`, `title`, `name`, `basename`, `basepath`, `bas
 
 DROP TABLE IF EXISTS `cms_templates_translation`;
 CREATE TABLE IF NOT EXISTS `cms_templates_translation` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL,
   `item_id` int(10) unsigned NOT NULL,
-  `lang` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `item_id` (`item_id`,`lang`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=94 ;
+  `lang` varchar(5) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -242,12 +279,11 @@ CREATE TABLE IF NOT EXISTS `cms_templates_translation` (
 
 DROP TABLE IF EXISTS `cms_templatetypes`;
 CREATE TABLE IF NOT EXISTS `cms_templatetypes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `pos` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+  `pos` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `cms_templatetypes`
@@ -267,7 +303,7 @@ INSERT INTO `cms_templatetypes` (`id`, `name`, `title`, `pos`) VALUES
 
 DROP TABLE IF EXISTS `cms_users`;
 CREATE TABLE IF NOT EXISTS `cms_users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `encrypted_password` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `reset_password_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -279,11 +315,8 @@ CREATE TABLE IF NOT EXISTS `cms_users` (
   `current_sign_in_ip` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `last_sign_in_ip` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `index_optimacms_cms_users_on_email` (`email`),
-  UNIQUE KEY `index_optimacms_cms_users_on_reset_password_token` (`reset_password_token`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `cms_users`
@@ -300,13 +333,12 @@ INSERT INTO `cms_users` (`id`, `email`, `encrypted_password`, `reset_password_to
 
 DROP TABLE IF EXISTS `optimacms_articles`;
 CREATE TABLE IF NOT EXISTS `optimacms_articles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `text` text COLLATE utf8_unicode_ci,
   `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -316,7 +348,7 @@ CREATE TABLE IF NOT EXISTS `optimacms_articles` (
 
 DROP TABLE IF EXISTS `optimacms_cms_users`;
 CREATE TABLE IF NOT EXISTS `optimacms_cms_users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `encrypted_password` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `reset_password_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -328,11 +360,8 @@ CREATE TABLE IF NOT EXISTS `optimacms_cms_users` (
   `current_sign_in_ip` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `last_sign_in_ip` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `index_optimacms_cms_users_on_email` (`email`),
-  UNIQUE KEY `index_optimacms_cms_users_on_reset_password_token` (`reset_password_token`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -342,8 +371,7 @@ CREATE TABLE IF NOT EXISTS `optimacms_cms_users` (
 
 DROP TABLE IF EXISTS `schema_migrations`;
 CREATE TABLE IF NOT EXISTS `schema_migrations` (
-  `version` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  UNIQUE KEY `unique_schema_migrations` (`version`)
+  `version` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -364,7 +392,7 @@ INSERT INTO `schema_migrations` (`version`) VALUES
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `encrypted_password` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `reset_password_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -376,12 +404,196 @@ CREATE TABLE IF NOT EXISTS `users` (
   `current_sign_in_ip` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `last_sign_in_ip` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `index_users_on_email` (`email`),
-  UNIQUE KEY `index_users_on_reset_password_token` (`reset_password_token`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cms_languages`
+--
+ALTER TABLE `cms_languages`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `idxLang` (`lang`);
+
+--
+-- Indexes for table `cms_mediafiles`
+--
+ALTER TABLE `cms_mediafiles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cms_pages`
+--
+ALTER TABLE `cms_pages`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `parent_id` (`parent_id`),
+  ADD KEY `status` (`status`),
+  ADD KEY `url` (`url`);
+
+--
+-- Indexes for table `cms_pages_translation`
+--
+ALTER TABLE `cms_pages_translation`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `template` (`template_filename`),
+  ADD KEY `item_id` (`item_id`),
+  ADD KEY `lang` (`lang`);
+
+--
+-- Indexes for table `cms_resources`
+--
+ALTER TABLE `cms_resources`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cms_resource_categories`
+--
+ALTER TABLE `cms_resource_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cms_resource_translations`
+--
+ALTER TABLE `cms_resource_translations`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `index_cms_resource_translations_on_cms_resource_id` (`cms_resource_id`),
+  ADD KEY `index_cms_resource_translations_on_locale` (`locale`);
+
+--
+-- Indexes for table `cms_templates`
+--
+ALTER TABLE `cms_templates`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ancestry` (`ancestry`),
+  ADD KEY `basepath` (`basepath`),
+  ADD KEY `pos` (`pos`);
+
+--
+-- Indexes for table `cms_templates_translation`
+--
+ALTER TABLE `cms_templates_translation`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `item_id` (`item_id`,`lang`);
+
+--
+-- Indexes for table `cms_templatetypes`
+--
+ALTER TABLE `cms_templatetypes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cms_users`
+--
+ALTER TABLE `cms_users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `index_optimacms_cms_users_on_email` (`email`),
+  ADD UNIQUE KEY `index_optimacms_cms_users_on_reset_password_token` (`reset_password_token`);
+
+--
+-- Indexes for table `optimacms_articles`
+--
+ALTER TABLE `optimacms_articles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `optimacms_cms_users`
+--
+ALTER TABLE `optimacms_cms_users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `index_optimacms_cms_users_on_email` (`email`),
+  ADD UNIQUE KEY `index_optimacms_cms_users_on_reset_password_token` (`reset_password_token`);
+
+--
+-- Indexes for table `schema_migrations`
+--
+ALTER TABLE `schema_migrations`
+  ADD UNIQUE KEY `unique_schema_migrations` (`version`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `index_users_on_email` (`email`),
+  ADD UNIQUE KEY `index_users_on_reset_password_token` (`reset_password_token`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cms_languages`
+--
+ALTER TABLE `cms_languages`
+  MODIFY `id` int(3) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `cms_mediafiles`
+--
+ALTER TABLE `cms_mediafiles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `cms_pages`
+--
+ALTER TABLE `cms_pages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=154;
+--
+-- AUTO_INCREMENT for table `cms_pages_translation`
+--
+ALTER TABLE `cms_pages_translation`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=348;
+--
+-- AUTO_INCREMENT for table `cms_resources`
+--
+ALTER TABLE `cms_resources`
+  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `cms_resource_categories`
+--
+ALTER TABLE `cms_resource_categories`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
+--
+-- AUTO_INCREMENT for table `cms_resource_translations`
+--
+ALTER TABLE `cms_resource_translations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `cms_templates`
+--
+ALTER TABLE `cms_templates`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=129;
+--
+-- AUTO_INCREMENT for table `cms_templates_translation`
+--
+ALTER TABLE `cms_templates_translation`
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=94;
+--
+-- AUTO_INCREMENT for table `cms_templatetypes`
+--
+ALTER TABLE `cms_templatetypes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `cms_users`
+--
+ALTER TABLE `cms_users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `optimacms_articles`
+--
+ALTER TABLE `optimacms_articles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `optimacms_cms_users`
+--
+ALTER TABLE `optimacms_cms_users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
