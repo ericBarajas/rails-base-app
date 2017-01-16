@@ -12,16 +12,16 @@ end
 gem 'rails', '~> 5.0.1'
 
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+group :development, :test do
+  gem 'puma', '~> 3.0'
+end
 
 #
 gem 'mysql2'
 
 
 
-#gem 'net-ssh', '3.1.1'
-gem 'net-ssh', '3.1.1', :git => 'https://github.com/maxivak/net-ssh', :branch => '3-1-release'
-#gem 'net-ssh', '4.0.0.alpha3'
+
 
 #
 gem 'devise', '4.2.0' #, '3.5.6'
@@ -32,7 +32,9 @@ if Bundler::WINDOWS
 else
   gem 'bcrypt', '~> 3.1.10', require: false
 end
-
+#gem 'net-ssh', '3.1.1'
+gem 'net-ssh', '3.1.1', github: 'maxivak/net-ssh', :branch => '3-1-release'
+#gem 'net-ssh', '4.0.0.alpha3'
 #gem 'bcrypt', '~> 3.1.7'
 
 #
@@ -43,17 +45,14 @@ gem 'omniauth-linkedin'
 #gem 'certified'
 
 #
-#gem 'activeadmin', '1.0.0.pre2'
-gem 'activeadmin', github: 'activeadmin'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+#gem 'activeadmin', '1.0.0.pre2' # bad
 
-#gem "activeadmin-sortable-tree"
-gem "active_admin-sortable_tree"
-#gem "activeadmin-sortable-tree", :github => "nebirhos/activeadmin-sortable-tree", :branch => "master"
-#gem "activeadmin-sortable-tree", :github => "maxivak/activeadmin-sortable-tree", :branch => "master"
+#gem 'activeadmin', github: 'activeadmin'
+#gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
+#gem "active_admin-sortable_tree"
 
-gem 'optimacms', '0.3.2', :git => 'https://github.com/maxivak/optimacms.git', :branch => 'rails5'
+gem 'optimacms', '0.3.2', github: 'maxivak/optimacms', branch: 'rails5-bootstrap4'
 #gem 'optimacms', '0.3.2', path: '/projects/temp/optimacms'
 #gem 'optimacms', '0.2.1', path: '../optimacms'
 #gem 'optimacms', '0.2.1', :git => 'https://github.com/maxivak/optimacms.git', :branch => 'bootstrap_v4_alpha'
@@ -66,36 +65,23 @@ gem 'globalize-accessors'
 
 #
 gem 'haml-rails', '~>0.9.0'
-
-#gem 'coffee-script-source'#, '1.8.0'
-gem 'coffee-script-source', '1.8.0'
-gem 'coffee-rails', '~> 4.2'
-gem 'jquery-rails' #,'4.0.3'
-gem 'sass-rails', '~> 5.0'
-gem 'compass-rails'#, '2.0.5'
-gem 'sprockets-rails'#, '2.3.3'
+#gem 'sass-rails', '~> 5.0.0'
+gem 'sass-rails', '~> 5.0.6'
+#gem 'sass-rails', '>= 3.2'
+#gem 'compass-rails'#, '2.0.5'
+#gem 'sprockets-rails'#, '2.3.3'
 gem 'uglifier', '>= 1.3.0'
-gem 'font-awesome-rails'#, '4.3.0.0'
-
-# bootstrap
-gem 'bootstrap-sass'#, '3.3.4.1'
-
+#gem 'coffee-script-source', '1.8.0'
+#gem 'coffee-rails', '~> 4.2'
+gem 'jquery-rails' #,'4.0.3'
+#gem 'font-awesome-rails'#, '4.3.0.0'
 
 # bootstrap v4 alpha
-#gem 'jekyll', '~> 3.0.1'
-#gem 'jekyll-redirect-from', '~> 0.9.0'
-#gem 'jekyll-sitemap', '~> 0.9.0'
-#gem 'sass', '>= 3.4.19'
-#gem 'sass-rails', '4.0.3'
-#gem 'scss_lint', '~> 0.43'
-
-
-#gem 'bootstrap', '~> 4.0.0.alpha3'
-
+gem 'bootstrap', '~> 4.0.0.alpha6'
 
 
 #
-gem 'rails-i18n'#, '4.0.8' # For 4.0.x
+gem 'rails-i18n', '~> 5.0'
 
 #
 gem 'rack-cache'
@@ -111,24 +97,23 @@ gem 'redis-rails'
 gem 'jbuilder' #, '~> 2.0'
 
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
+#gem 'therubyracer', platforms: :ruby
+#gem 'execjs'
 
 
-gem 'paperclip'#, '~> 4.2'
+
 gem 'kaminari'
 gem 'kaminari-bootstrap'#, '~> 3.0.1'
 
-gem 'simple_form'
+gem 'simple_form', '~>3.3.1'
 #gem 'simple_search_filter', '0.0.31'
-gem 'simple_search_filter', '~>0.0.31', github: 'maxivak/simple_search_filter', branch: 'rails5'
-gem 'bootstrap3_autocomplete_input', '0.2.0'
+gem 'simple_search_filter', '~>0.0.31', github: 'maxivak/simple_search_filter', branch: 'bootstrap4'
+#gem 'bootstrap3_autocomplete_input', '0.2.0'
 
 
+gem 'paperclip'#, '~> 4.2'
 gem 'ancestry'
 
 
@@ -161,6 +146,18 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
 end
+
+group :test do
+  gem 'rspec-rails' #, '3.1.0'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'capybara'
+  #gem "capybara-webkit"
+  #gem 'selenium-webdriver'
+
+end
+
 
 
 
