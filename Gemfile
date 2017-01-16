@@ -19,10 +19,6 @@ end
 #
 gem 'mysql2'
 
-
-
-
-
 #
 gem 'devise', '4.2.0' #, '3.5.6'
 
@@ -74,7 +70,7 @@ gem 'uglifier', '>= 1.3.0'
 #gem 'coffee-script-source', '1.8.0'
 #gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails' #,'4.0.3'
-#gem 'font-awesome-rails'#, '4.3.0.0'
+gem 'font-awesome-rails', '~>4.7'
 
 # bootstrap v4 alpha
 gem 'bootstrap', '~> 4.0.0.alpha6'

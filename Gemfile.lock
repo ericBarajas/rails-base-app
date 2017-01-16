@@ -412,6 +412,7 @@ DEPENDENCIES
   el_finder (= 1.1.12)
   factory_girl_rails
   faker
+  font-awesome-rails (~> 4.7)
   globalize (~> 5.1.0)!
   globalize-accessors
   haml-rails (~> 0.9.0)
