@@ -99,6 +99,11 @@ gem 'jbuilder' #, '~> 2.0'
 #gem 'execjs'
 
 
+# Tooltips and popovers depend on tether for positioning. If you use them, add tether to the Gemfile:
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
+
 
 gem 'kaminari'
 gem 'kaminari-bootstrap'#, '~> 3.0.1'
