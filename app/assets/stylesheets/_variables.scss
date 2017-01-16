@@ -1,5 +1,8 @@
 //== Colors
 
+
+
+//== my colors
 $col-gray: #687074; // main color
 $col-green: #51d466; // 72c02c
 $col-blue: #009FDB; // main blue
@@ -26,6 +29,9 @@ $col-second: $col-blue;
 //
 $brand-primary:         $col-gray;
 $brand-success:         $col-green;
-$brand-info:            $col-blue;
-$brand-warning:         #F39C12;
-$brand-danger:          #E74C3C;
+$brand-info:            $col-blue; //$teal
+$brand-warning:         #F39C12; // $orange
+$brand-danger:          #E74C3C; // $red
+$brand-inverse:             $gray-dark;
+
+
