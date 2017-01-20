@@ -69,7 +69,7 @@ gem 'sass-rails', '~> 5.0.6'
 gem 'uglifier', '>= 1.3.0'
 #gem 'coffee-script-source', '1.8.0'
 #gem 'coffee-rails', '~> 4.2'
-gem 'jquery-rails' #,'4.0.3'
+gem 'jquery-rails', '4.2.2' #,'4.0.3'
 gem 'font-awesome-rails', '~>4.7'
 
 # bootstrap v4 alpha

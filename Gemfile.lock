@@ -421,7 +421,7 @@ DEPENDENCIES
   globalize-accessors
   haml-rails (~> 0.9.0)
   jbuilder
-  jquery-rails
+  jquery-rails (= 4.2.2)
   kaminari
   kaminari-bootstrap
   mysql2
