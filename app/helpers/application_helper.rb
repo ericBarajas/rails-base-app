@@ -5,4 +5,12 @@ module ApplicationHelper
   rescue => e
     nil
   end
+
+
+  def paginate objects, options = {}
+    options.reverse_merge!( theme: 'bootstrap4' )
+
+    super( objects, options )
+  end
+
 end
