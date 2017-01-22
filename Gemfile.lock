@@ -8,9 +8,15 @@ GIT
       request_store (~> 1.0)
 
 GIT
-  remote: https://github.com/maxivak/optimacms.git
-  revision: fe99908a3b8c483aaae5985d085e408b3fdbd218
-  branch: rails5-bootstrap4
+  remote: https://github.com/maxivak/simple_search_filter.git
+  revision: 376e2898d06f14545b654a950f84ba52911874cd
+  branch: bootstrap4
+  specs:
+    simple_search_filter (0.0.31)
+      rails (~> 5.0.0)
+
+PATH
+  remote: w:/myrails/cms/site
   specs:
     optimacms (0.3.2)
       ancestry
@@ -27,14 +33,6 @@ GIT
       sass-rails (>= 5.0.4)
       simple_form
       simple_search_filter
-
-GIT
-  remote: https://github.com/maxivak/simple_search_filter.git
-  revision: 376e2898d06f14545b654a950f84ba52911874cd
-  branch: bootstrap4
-  specs:
-    simple_search_filter (0.0.31)
-      rails (~> 5.0.0)
 
 GEM
   remote: https://rubygems.org/
