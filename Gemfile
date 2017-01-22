@@ -28,8 +28,10 @@ if Bundler::WINDOWS
 else
   gem 'bcrypt', '~> 3.1.10', require: false
 end
+
+gem 'net-ssh', '4.0.1'
 #gem 'net-ssh', '3.1.1'
-gem 'net-ssh', '3.1.1', github: 'maxivak/net-ssh', :branch => '3-1-release'
+#gem 'net-ssh', '3.1.1', github: 'maxivak/net-ssh', :branch => '3-1-release'
 #gem 'net-ssh', '4.0.0.alpha3'
 #gem 'bcrypt', '~> 3.1.7'
 
@@ -73,7 +75,12 @@ gem 'jquery-rails', '4.2.2' #,'4.0.3'
 gem 'font-awesome-rails', '~>4.7'
 
 # bootstrap v4 alpha
-gem 'bootstrap', '~> 4.0.0.alpha6'
+#gem 'bootstrap', '~> 4.0.0.alpha6'
+
+# Tooltips and popovers depend on tether for positioning. If you use them, add tether to the Gemfile:
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
 
 
 #
@@ -89,8 +96,7 @@ gem 'redis-rails'
 #gem 'turbolinks', '~> 5'
 
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder' #, '~> 2.0'
+gem 'jbuilder'
 
 
 
@@ -99,14 +105,10 @@ gem 'jbuilder' #, '~> 2.0'
 #gem 'execjs'
 
 
-# Tooltips and popovers depend on tether for positioning. If you use them, add tether to the Gemfile:
-source 'https://rails-assets.org' do
-  gem 'rails-assets-tether', '>= 1.3.3'
-end
 
 
 gem 'kaminari'
-gem 'kaminari-bootstrap'#, '~> 3.0.1'
+#gem 'kaminari-bootstrap'#, '~> 3.0.1'
 
 gem 'simple_form', '~>3.3.1'
 #gem 'simple_search_filter', '0.0.31'
@@ -138,45 +140,10 @@ gem 'sidekiq'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
-end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
-end
-
-group :test do
-  gem 'rspec-rails' #, '3.1.0'
-  gem 'factory_girl_rails'
-  gem 'database_cleaner'
-  gem 'faker'
-  gem 'capybara'
-  #gem "capybara-webkit"
-  #gem 'selenium-webdriver'
-
-end
-
-
-
-
-
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  #gem 'byebug'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  #gem 'web-console', '~> 2.0'
-
-  gem 'rspec-rails'#, '3.1.0'
-  gem 'capybara'
-  gem 'factory_girl_rails'
-  gem 'database_cleaner'
-  gem 'faker'
-  #gem "capybara-webkit"
-  #gem 'selenium-webdriver'
 end
 
 
@@ -192,3 +159,23 @@ group :development do
   #gem 'capistrano-upload-config'
 
 end
+
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platform: :mri
+
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  #gem 'web-console', '~> 2.0'
+
+  gem 'rspec-rails'#, '3.1.0'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'capybara'
+  #gem "capybara-webkit"
+  #gem 'selenium-webdriver'
+
+end
+
+

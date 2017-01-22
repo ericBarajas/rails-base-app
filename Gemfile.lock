@@ -8,23 +8,14 @@ GIT
       request_store (~> 1.0)
 
 GIT
-  remote: https://github.com/maxivak/net-ssh.git
-  revision: 3b8a71c90181097289bd02b79dfa4512fd217d59
-  branch: 3-1-release
-  specs:
-    net-ssh (3.1.1)
-
-GIT
   remote: https://github.com/maxivak/optimacms.git
-  revision: 045a2ee0b6900097b0c7d6a8edcbfdf056879c0a
+  revision: fe99908a3b8c483aaae5985d085e408b3fdbd218
   branch: rails5-bootstrap4
   specs:
     optimacms (0.3.2)
       ancestry
-      bootstrap (~> 4.0.0.alpha6)
-      bootstrap3_autocomplete_input (~> 0.2.0)
-      coffee-rails
-      devise (~> 4.2)
+      bootstrap_autocomplete_input
+      devise
       font-awesome-rails
       globalize
       globalize-accessors
@@ -36,11 +27,10 @@ GIT
       sass-rails (>= 5.0.4)
       simple_form
       simple_search_filter
-      uglifier
 
 GIT
   remote: https://github.com/maxivak/simple_search_filter.git
-  revision: 68fdd72ac597da58868aa8ea2b45a79826dbd9e5
+  revision: 376e2898d06f14545b654a950f84ba52911874cd
   branch: bootstrap4
   specs:
     simple_search_filter (0.0.31)
@@ -99,15 +89,9 @@ GEM
     ancestry (2.2.2)
       activerecord (>= 3.0.0)
     arel (7.1.4)
-    autoprefixer-rails (6.6.1)
-      execjs
     bcrypt (3.1.11)
     bcrypt (3.1.11-x64-mingw32)
     bcrypt-ruby (3.1.1.rc1)
-    bootstrap (4.0.0.alpha6)
-      autoprefixer-rails (>= 6.0.3)
-      sass (>= 3.4.19)
-    bootstrap3_autocomplete_input (0.2.0)
     bootstrap_autocomplete_input (0.2.0)
     builder (3.2.3)
     byebug (9.0.6)
@@ -137,13 +121,6 @@ GEM
     climate_control (0.1.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
-    coffee-rails (4.2.1)
-      coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.2.x)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.12.2)
     concurrent-ruby (1.0.4)
     connection_pool (2.2.1)
     database_cleaner (1.5.3)
@@ -154,7 +131,7 @@ GEM
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
-    diff-lcs (1.2.5)
+    diff-lcs (1.3)
     el_finder (1.1.12)
       image_size (>= 1.0.0)
     erubis (2.7.0)
@@ -200,21 +177,18 @@ GEM
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
     jwt (1.5.6)
-    kaminari (1.0.0)
+    kaminari (1.0.1)
       activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.0.0)
-      kaminari-activerecord (= 1.0.0)
-      kaminari-core (= 1.0.0)
-    kaminari-actionview (1.0.0)
+      kaminari-actionview (= 1.0.1)
+      kaminari-activerecord (= 1.0.1)
+      kaminari-core (= 1.0.1)
+    kaminari-actionview (1.0.1)
       actionview
-      kaminari-core (= 1.0.0)
-    kaminari-activerecord (1.0.0)
+      kaminari-core (= 1.0.1)
+    kaminari-activerecord (1.0.1)
       activerecord
-      kaminari-core (= 1.0.0)
-    kaminari-bootstrap (3.0.1)
-      kaminari (>= 0.13.0)
-      rails
-    kaminari-core (1.0.0)
+      kaminari-core (= 1.0.1)
+    kaminari-core (1.0.1)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -233,6 +207,7 @@ GEM
     mysql2 (0.4.5-x64-mingw32)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
+    net-ssh (4.0.1)
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
@@ -245,7 +220,7 @@ GEM
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (>= 1.2, < 3)
-    omniauth (1.3.1)
+    omniauth (1.3.2)
       hashie (>= 1.2, < 4)
       rack (>= 1.0, < 3)
     omniauth-facebook (4.0.0)
@@ -403,7 +378,6 @@ DEPENDENCIES
   activemodel-serializers-xml
   ancestry
   bcrypt-ruby (= 3.1.1.rc1)
-  bootstrap (~> 4.0.0.alpha6)
   bootstrap_autocomplete_input (= 0.2.0)
   byebug
   capistrano
@@ -423,9 +397,8 @@ DEPENDENCIES
   jbuilder
   jquery-rails (= 4.2.2)
   kaminari
-  kaminari-bootstrap
   mysql2
-  net-ssh (= 3.1.1)!
+  net-ssh (= 4.0.1)
   omniauth
   omniauth-facebook
   omniauth-linkedin
@@ -454,4 +427,4 @@ RUBY VERSION
    ruby 2.3.3p222
 
 BUNDLED WITH
-   1.13.7
+   1.14.1
