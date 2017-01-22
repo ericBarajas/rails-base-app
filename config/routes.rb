@@ -6,6 +6,11 @@ Rails.application.routes.draw do
 
   match 'demo/:action', to: 'demo#action', via: [:get, :post], as: 'demo'
 
+  if Rails.env.development?
+    match 'debug/:action', to: 'debug#action', via: [:get, :post], as: 'debug'
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
