@@ -1,0 +1,41 @@
+dir_backups_base: "d:/mmx/backups/tpl/"
+
+
+backup:
+  app_files:
+    exclude:
+      - log
+      - tmp
+      - public/assets
+      - public/images
+      - public/elfinder
+      - public/system
+      - public/uploads
+      - data
+      - db
+
+
+  user_files:
+    include:
+      - public/uploads
+      - public/docs
+      - public/images
+      - public/img
+
+
+
+notify:
+  mail:
+    from: notify@friendlydata.com
+    to: mxdevit@gmail.com
+    reply_to: notify@friendlydata.com
+
+
+
+
+
+storages:
+  -
+    type: "local"
+    path: "d:/mmx/backups/tpl/"
+

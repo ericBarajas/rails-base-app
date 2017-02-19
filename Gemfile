@@ -13,7 +13,7 @@ gem 'rails', '~> 5.0.1'
 
 # Use Puma as the app server
 group :development, :test do
-  gem 'puma', '~> 3.0'
+  gem 'puma', '~> 3.7'
 end
 
 #
@@ -50,10 +50,14 @@ gem 'omniauth-linkedin'
 
 #gem "active_admin-sortable_tree"
 
-gem 'optimacms', '0.3.2', github: 'maxivak/optimacms', branch: 'rails5-bootstrap4'
+gem 'optimacms', '0.3.4'
+#gem 'optimacms', '0.3.4', path: '../../cms/site'
+#gem 'optimacms', '0.3.2', github: 'maxivak/optimacms', branch: 'rails5-bootstrap4'
 #gem 'optimacms', '0.3.2', path: 'w:/myrails/cms/site', branch: 'rails5-bootstrap4'
 
 #gem 'rails_themes_bootstrap', '0.0.2',:git => 'git://github.com/maxivak/rails_themes_bootstrap.git'
+
+gem 'optimacms_backups'
 
 gem 'globalize', '~>5.1.0', github: 'globalize/globalize'
 gem 'activemodel-serializers-xml'
@@ -122,10 +126,6 @@ gem 'tinymce-rails'#, '4.1.6'
 
 # editor
 gem 'el_finder', '1.1.12'
-
-
-#
-#gem 'callback_request_bootstrap'
 
 #
 gem 'redis'

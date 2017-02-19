@@ -69,6 +69,10 @@ Rails.application.routes.draw do
 
   #
 
+  ### optimacms gems
+  #mount OptimacmsOptions::Engine => "/", :as => "cms_options"
+  mount OptimacmsBackups::Engine => "/", :as => "cms_backups"
+
   # !!! LAST row
   mount Optimacms::Engine => "/", :as => "cms"
 
