@@ -13,12 +13,13 @@ namespace :install do
   end
 
 
-  desc 'init db. Import DB'
-  task :init_db => :environment do
+  desc 'import db'
+  task :import_db => :environment do
     #ActiveRecord::Base.connection.execute(IO.read("db-init/gex.sql"))
 
-    # gex.sql
-    script = Rails.root.join("db-init").join("gex.sql.gz").read
+    # init.sql
+    filename = ENV['filename'] || '__db/init.sql'
+    script = Rails.root.join(filename).read
 
     # this needs to match the delimiter of your queries
     statements = script.split /;$/
