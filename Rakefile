@@ -3,4 +3,6 @@
 
 require_relative 'config/application'
 
+Rake.add_rakelib 'tasks'
+
 Rails.application.load_tasks
