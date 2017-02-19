@@ -3,6 +3,9 @@
 
 require_relative 'config/application'
 
+Dir.glob('tasks/*.rake').each { |r| load r}
+Dir.glob('tasks/**/*.rake').each { |r| load r}
+
 Rake.add_rakelib 'tasks'
 
 Rails.application.load_tasks

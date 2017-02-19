@@ -1,12 +1,13 @@
 # clear the previous precompile task
-Rake::Task["deploy:assets:precompile"].clear_actions
 class PrecompileRequired < StandardError; end
-
 
 namespace :deploy do
   namespace :assets do
     desc "Precompile assets if changed"
     task :precompile_changed do
+      Rake::Task["deploy:assets:precompile"].clear_actions
+
+
       on roles(:app) do
         within release_path do
           with rails_env: fetch(:rails_env) do
@@ -55,6 +56,8 @@ namespace :deploy do
 
     desc 'Run the precompile task locally and upload to server'
     task :precompile_locally_archive do
+      Rake::Task["deploy:assets:precompile"].clear_actions
+
       on roles(:app) do
         run_locally do
           if RUBY_PLATFORM =~ /(win32)|(i386-mingw32)/
@@ -103,6 +106,8 @@ namespace :deploy do
 
     desc 'Precompile assets locally and upload to server'
     task :precompile_locally_copy do
+      Rake::Task["deploy:assets:precompile"].clear_actions
+
       on roles(:app) do
         run_locally do
           with rails_env: fetch(:rails_env) do
