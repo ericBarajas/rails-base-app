@@ -9,7 +9,7 @@ namespace :deploy do
 
     task :disable do
       on roles(:web) do
-        #(execute "rm #{shared_path}/system/maintenance.html") rescue nil
+        (execute "rm #{shared_path}/system/maintenance.html") rescue nil
 
         require 'erb'
         reason = ENV['REASON']
