@@ -50,7 +50,7 @@ gem 'omniauth-linkedin'
 
 #gem "active_admin-sortable_tree"
 
-gem 'optimacms', '0.3.4'
+gem 'optimacms', '0.3.9'
 #gem 'optimacms', '0.3.4', path: '../../cms/site'
 #gem 'optimacms', '0.3.2', github: 'maxivak/optimacms', branch: 'rails5-bootstrap4'
 #gem 'optimacms', '0.3.2', path: 'w:/myrails/cms/site', branch: 'rails5-bootstrap4'
@@ -59,9 +59,10 @@ gem 'optimacms', '0.3.4'
 
 gem 'optimacms_backups'
 
-gem 'globalize', '~>5.1.0', github: 'globalize/globalize'
+gem 'globalize', '5.1.0.beta1', github: 'globalize/globalize'
 gem 'activemodel-serializers-xml'
 gem 'globalize-accessors'
+
 
 #
 gem 'haml-rails', '~>0.9.0'
@@ -146,11 +147,14 @@ end
 
 # deployment
 group :development do
-  gem 'capistrano'#,  '3.4.0'
-  gem 'capistrano-rails'#, '1.1.3'
-  gem 'capistrano-bundler'#, '~> 1.1'
-  gem 'capistrano-rvm'#,   '~> 0.1'
+  gem 'capistrano',  '3.7.1'
+  #gem 'capistrano',  '3.4.0'
+  gem 'capistrano-rails', '1.1.7'
+  #gem 'capistrano-rails', '1.1.3'
+  gem 'capistrano-bundler', '1.1.4'
+  gem 'capistrano-rvm',   '0.1.2'
 
+  gem 'slackistrano'
   #gem 'capistrano-passenger'
   #gem 'capistrano-touch-linked-files'
   #gem 'capistrano-upload-config'
