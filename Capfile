@@ -1,4 +1,8 @@
-﻿# Load DSL and set up stages
+﻿# appdata settings
+require_relative 'config/appdata/appdata_settings'
+
+
+# Load DSL and set up stages
 require 'capistrano/setup'
 
 # Include default deployment tasks
@@ -16,11 +20,13 @@ require 'capistrano/deploy'
 #   https://github.com/capistrano/passenger
 #
 require 'capistrano/rvm'
+require 'capistrano/rails'
+
 # require 'capistrano/rbenv'
 # require 'capistrano/chruby'
 #require 'capistrano/bundler' # ??
-require 'capistrano/rails/assets' # ???
-require 'capistrano/rails/migrations'
+#require 'capistrano/rails/assets' # ???
+#require 'capistrano/rails/migrations'
 #require 'capistrano/passenger'
 #require 'capistrano/touch-linked-files'
 #require 'capistrano/upload-config'

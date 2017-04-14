@@ -3,6 +3,10 @@ module Optimacms
     class AdminMenu
       include Optimacms::Concerns::AdminMenu::AdminMenu
 
+      def self.make_page(t, u)
+        {title: t, url: '/'+Optimacms.admin_namespace+u }
+      end
+
       def self.get_menu_custom
         [
 =begin
@@ -14,6 +18,15 @@ module Optimacms
                 ]
             },
 =end
+
+
+            {
+                title: 'App data', route: nil,
+                submenu: [
+                    make_page('Deploy', '/deploy'),
+
+                ]
+            },
 
 
         ]

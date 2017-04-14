@@ -1,0 +1,42 @@
+%h1 Deploy
+
+%ul.list-inline#commands
+  %li=link_to 'Save changes', '#', :class=>'btn btn-primary btn-sm', :"data-name"=>'command', :"data-cmd"=>'server_save'
+  %li=link_to 'Get changes', '#', :class=>'btn btn-primary btn-sm', :"data-name"=>'command', :"data-cmd"=>'server_update'
+
+
+#status_commands.bg-info.well
+
+
+:javascript
+  // commands
+  $( '#commands a[data-name="command"]' ).click(function() {
+    //$('#status_commands').html("Handler for .click() called." );
+    send_command($(this).data('cmd'));
+  });
+
+  function send_command(cmd){
+    $('#status_commands').html("Sending...");
+
+    $.ajax({
+      url: "/admin/deploy/" + cmd+"?x="+Math.random(),
+      data: {},
+      type: "GET",
+      dataType: "json",
+      contentType: "application/json",
+      beforeSend: function(){
+        // Handle the beforeSend event
+      },
+      success: function(res_data){
+        $('#status_commands').html("Result: "+res_data.output);
+      },
+      error: function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        //alert(thrownError);
+      },
+      complete: function (res_data) {
+
+      }
+
+    });
+  }
