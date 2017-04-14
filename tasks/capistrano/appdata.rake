@@ -16,7 +16,8 @@ namespace :appdata do
       execute "mkdir -p #{d_repo}"
 
       execute "cd #{d_repo} && git init"
-      execute "cd #{d_repo} && git remote add origin #{git_repo}" rescue true
+      (execute "cd #{d_repo} && git remote add origin #{git_repo}") rescue true
+      execute "cd #{d_repo} && git remote set-url origin  #{git_repo} "
 
     end
   end
