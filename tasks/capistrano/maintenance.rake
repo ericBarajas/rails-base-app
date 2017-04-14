@@ -9,12 +9,12 @@ namespace :deploy do
 
     task :disable do
       on roles(:web) do
-        execute "rm #{shared_path}/system/maintenance.html" rescue nil
+        #(execute "rm #{shared_path}/system/maintenance.html") rescue nil
 
         require 'erb'
         reason = ENV['REASON']
         deadline = ENV['UNTIL']
-        template = File.read('app/views/admin/maintenance.html.haml')
+        template = File.read('app/views/admin/maintenance.html.erb')
         #page = ERB.new(template).result(binding)
         content = ERB.new(template).result(binding)
 
