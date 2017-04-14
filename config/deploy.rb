@@ -1,10 +1,12 @@
-﻿# config valid only for current version of Capistrano
-lock '3.4.0'
+﻿#
+set :log_level, :debug
 
-set :rvm_ruby_version, '2.1.5'
+
+#set :rvm_type, :system
 set :rvm_type, :user
-set :ssh_options, { forward_agent: true, user: 'uadmin' }
-#set :pty, true
+set :rvm_ruby_version, '2.3.3'
+
+
 
 
 #
@@ -16,24 +18,22 @@ set :rsync_options, %w[
 
 
 
-#set :user, 'uadmin'
-#set :group, 'dev'
-set :deploy_user, 'uadmin'
-
 role :app, %w{11.22.33.44}
 role :web, %w{11.22.33.44}
 role :db,  %w{11.22.33.44}
 
 
 #
-server '11.22.33.44', user: 'myuser', roles: %w{web}, primary: true
+set :repo_url, 'ssh://git@github.com/myrepo.git'
 
-#
-set :repo_url, 'ssh://myserver.com/repos/sitename.git'
-#set :repo_url, '.'
 
-# set in :stage file
-#set :application, 'appname'
+
+#set :user, 'uadmin'
+#set :group, 'dev'
+set :deploy_user, 'app'
+
+set :ssh_options, { forward_agent: true, user: 'app' }
+#set :pty, true
 
 
 # Default value for :scm is :git
@@ -59,7 +59,7 @@ set :keep_releases, 10
 # Add necessary files and directories which can be changed on server.
 my_config_dirs = %W{config config/environments}
 my_config_files = %W{config/database.yml config/secrets.yml config/environments/#{fetch(:stage)}.rb }
-my_app_dirs = %W{public/system public/uploads public/img}
+my_app_dirs = AppdataSettings.deploy_dirs_exclude
 
 
 # do not change below
@@ -105,21 +105,11 @@ namespace :deploy do
   end
 end
 
-namespace :deploy do
-  task :mycheck do
-    on roles(:app) do
-      warn 'PLATFORM='+RUBY_PLATFORM
-      if RUBY_PLATFORM =~ /(win32)|(i386-mingw32)/
-        warn '-------- winda'
-      else
-      end
-    end
-  end
-
-end
 
 
 
 #
-#before "deploy", "deploy:web:disable"
-#after "deploy", "deploy:web:enable"
+before "deploy", "deploy:web:disable"
+after "deploy", "deploy:web:enable"
+
+after "deploy", "deploy:restart"
