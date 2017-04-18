@@ -14,9 +14,9 @@ class AppdataSettings
 
 
 
-  def self.deploy_dirs_exclude
-    a1 = settings['site_user_data_dirs'] || []
-    a2 = settings['site_app_data_dirs'] || []
+  def self.deploy_dirs_exclude(_env)
+    a1 = get_config_value('site_user_data_dirs', _env_, [])
+    a2 = get_config_value('site_app_data_dirs', _env, [])
 
     a1+a2
   end
@@ -30,11 +30,13 @@ class AppdataSettings
   end
 
 
-  def self.get_config_value(name, _env)
+  def self.get_config_value(name, _env, v_def=nil)
+
+    puts "get c: #{name}, e: #{_env}"
     e = _env
     e = 'default' unless e
 
-    v = settings[e][name.to_s] || settings['default'][name.to_s] || settings[name]
+    v = settings[e][name.to_s] || settings['default'][name.to_s] || settings[name] || v_def
 
     v
   end
