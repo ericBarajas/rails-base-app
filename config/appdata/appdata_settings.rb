@@ -31,8 +31,6 @@ class AppdataSettings
 
 
   def self.get_config_value(name, _env, v_def=nil)
-
-    puts "get c: #{name}, e: #{_env}"
     e = _env
     e = 'default' unless e
 
