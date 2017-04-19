@@ -81,11 +81,16 @@ namespace :appdata do
   end
 
   task :server_update do
+
     on roles(:web) do
-      e = fetch(:rails_env)
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          e = fetch(:rails_env)
 
-      execute "cd #{current_path} && RAILS_ENV=#{e} rake appdata:update"
-
+          #execute "cd #{current_path} && RAILS_ENV=#{e} rake appdata:update"
+          execute "RAILS_ENV=#{e} rake appdata:update"
+        end
+      end
     end
   end
 
