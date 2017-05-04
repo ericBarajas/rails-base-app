@@ -15,7 +15,7 @@ class AppdataSettings
 
 
   def self.deploy_dirs_exclude(_env)
-    a1 = get_config_value('site_user_data_dirs', _env_, [])
+    a1 = get_config_value('site_user_data_dirs', _env, [])
     a2 = get_config_value('site_app_data_dirs', _env, [])
 
     a1+a2
