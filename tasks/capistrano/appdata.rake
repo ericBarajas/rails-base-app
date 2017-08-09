@@ -1,6 +1,16 @@
 namespace :deploy do
 namespace :appdata do
 
+  task :check do
+    on roles(:app) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, "appdata:check"
+        end
+      end
+    end
+  end
+
   task :setup do
     on roles(:app) do
       app_path = fetch(:deploy_to)
@@ -74,21 +84,34 @@ namespace :appdata do
 
   task :server_save do
     on roles(:app) do
-      e = fetch(:rails_env)
+      within release_path do
+        #with fetch(:bundle_env_variables, {}) do
+        with rails_env: fetch(:rails_env) do
 
-      execute "cd #{current_path} && RAILS_ENV=#{e} rake appdata:save"
+          execute :rake, "appdata:save"
+          #e = fetch(:rails_env)
+          #execute "cd #{current_path} && RAILS_ENV=#{e} rake appdata:save"
+        end
+      end
     end
   end
 
+
   task :server_update do
 
-    on roles(:web) do
+    on roles(:app) do
       within release_path do
+        #with fetch(:bundle_env_variables, {}) do
         with rails_env: fetch(:rails_env) do
-          e = fetch(:rails_env)
+          #e = fetch(:rails_env)
 
-          #execute "cd #{current_path} && RAILS_ENV=#{e} rake appdata:update"
-          execute "RAILS_ENV=#{e} rake appdata:update"
+          #execute "echo $PWD"
+          #execute "rvm list"
+
+          execute :rake, "appdata:update"
+          #execute :bundle, 'exec', "rake appdata:update"
+          #execute "cd #{release_path} && RAILS_ENV=#{e} bundle exec rake appdata:update"
+          #execute "RAILS_ENV=#{e} rake appdata:update"
         end
       end
     end

@@ -1,8 +1,14 @@
 # sync
 namespace :appdata do
 
+  task :check => :environment do
+    e = Rails.env
+    puts "RAILS_ENV=#{e}"
+
+  end
+
   # get from remote repo and copy to the project/application
-  task :update do
+  task :update => :environment do
     #
     d_repo = AppdataSettings.appdata_repo_path(Rails.root, Rails.env)
 
@@ -15,7 +21,7 @@ namespace :appdata do
     Rake::Task["appdata:repo:pull"].invoke
 
     # copy to project
-    AppdataSettings.site_app_data_dirs.each do |d|
+    AppdataSettings.site_app_data_dirs(Rails.env).each do |d|
       d_from = File.join(d_repo, d)
 
       d_to = File.join(Rails.root, d)
@@ -36,7 +42,7 @@ namespace :appdata do
   end
 
   # save current data to remote repo
-  task :save do
+  task :save => :environment do
     # init repo
     Rake::Task["appdata:repo:setup"].invoke
 
@@ -63,7 +69,7 @@ namespace :appdata do
     output = %x(which rsync)
     res_rsync = output.strip.delete(" \t\r\n")
 
-    AppdataSettings.site_app_data_dirs.each do |d|
+    AppdataSettings.site_app_data_dirs(Rails.env).each do |d|
       d_from = File.join(Rails.root, d)
 
       d_to = File.join(d_repo, d)
@@ -98,14 +104,15 @@ namespace :appdata do
   ### operations with repo
 
   namespace :repo do
-    task :setup do
+    task :setup => :environment do
       d_repo = AppdataSettings.appdata_repo_path(Rails.root, Rails.env)
 
       #
       FileUtils.mkdir_p(d_repo) unless File.directory?(d_repo)
 
       # init local git repo
-      repo_url = AppdataSettings.repo_app_site_data
+      repo_url = AppdataSettings.repo_app_site_data(Rails.env)
+
       %x[cd #{d_repo} && git init ]
       %x[cd #{d_repo} && git remote add origin  #{repo_url} ] rescue nil
       %x[cd #{d_repo} && git remote set-url origin  #{repo_url} ]
@@ -113,14 +120,14 @@ namespace :appdata do
     end
 
 
-    task :pull do
+    task :pull => :environment do
       #
       d_repo = AppdataSettings.appdata_repo_path(Rails.root, Rails.env)
 
       %x[cd #{d_repo} && git pull origin master]
     end
 
-    task :commit_push do
+    task :commit_push => :environment do
       #
       d_repo = AppdataSettings.appdata_repo_path(Rails.root, Rails.env)
 

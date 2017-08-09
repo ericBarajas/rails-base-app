@@ -1,6 +1,5 @@
 default: &default
   repo_app_core: "ssh://git@github.com/myapp.git"
-  repo_app_site_data: "ssh://git@github.com/myapp-data.git"
 
   repo_app_data_dir_name: "repo-data"
   repo_app_data_dir_base: "tmp"
@@ -19,9 +18,18 @@ default: &default
 
 development:
   <<: *default
+  repo_app_site_data: "ssh://git@github.com/myapp-data.git"
+  repo_app_data_dir_base: "tmp"
+
+
+
+beta:
+  <<: *default
+  repo_app_site_data: "ssh://git@github.com/myapp-data.git"
   repo_app_data_dir_base: "tmp"
 
 
 production:
   <<: *default
+  repo_app_site_data: "ssh://git@github.com/myapp-data.git"
   repo_app_data_dir_base: "../.."
