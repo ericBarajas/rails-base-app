@@ -6,6 +6,8 @@
 Model.new(:app_files_backup, 'App files') do
 
   archive :files do |archive|
+    archive.tar_options '-h'
+
     dir_app = $app_config[:path]
 
 
