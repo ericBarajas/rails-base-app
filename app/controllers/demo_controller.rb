@@ -1,5 +1,5 @@
 class DemoController < SiteBaseController
-  layout 'basic'
+  layout 'application'
 
   def index
 
