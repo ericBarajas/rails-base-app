@@ -77,11 +77,13 @@ gem 'sass-rails', '~> 5.0.6'
 gem 'uglifier', '>= 1.3.0'
 #gem 'coffee-script-source', '1.8.0'
 #gem 'coffee-rails', '~> 4.2'
-gem 'jquery-rails', '4.2.2' #,'4.0.3'
+#gem 'jquery-rails', '4.2.2' #,'4.0.3'
+gem 'jquery-rails', '4.3.1'
 gem 'font-awesome-rails', '~>4.7'
 
 # bootstrap v4 alpha
 #gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap', '~> 4.0.0.beta'
 
 # Tooltips and popovers depend on tether for positioning. If you use them, add tether to the Gemfile:
 source 'https://rails-assets.org' do
