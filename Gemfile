@@ -50,7 +50,7 @@ gem 'omniauth-linkedin'
 
 #gem "active_admin-sortable_tree"
 
-gem 'optimacms', '0.3.13'
+gem 'optimacms', '0.3.14'
 #gem 'optimacms', '0.3.12', path: '/data/projects/myrails/cms/site'
 #gem 'optimacms', '0.3.2', github: 'maxivak/optimacms', branch: 'rails5-bootstrap4'
 #gem 'optimacms', '0.3.2', path: 'w:/myrails/cms/site', branch: 'rails5-bootstrap4'
@@ -60,7 +60,7 @@ gem 'optimacms', '0.3.13'
 gem 'optimacms_backups'
 
 #gem 'globalize', '5.1.0.beta1', github: 'globalize/globalize'
-gem 'globalize', git: 'https://github.com/globalize/globalize'
+gem 'globalize', github: 'globalize/globalize'
 gem 'activemodel-serializers-xml'
 
 gem 'activemodel-serializers-xml'

@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/globalize/globalize
+  remote: https://github.com/globalize/globalize.git
   revision: 35adbbd4928577fef701b0986f7d7d035b0d4340
   specs:
     globalize (5.1.0.beta2)
@@ -214,7 +214,7 @@ GEM
     omniauth-twitter (1.4.0)
       omniauth-oauth (~> 1.1)
       rack
-    optimacms (0.3.13)
+    optimacms (0.3.14)
       ancestry
       bootstrap_autocomplete_input (>= 0.2.0)
       devise (>= 4.0)
@@ -412,7 +412,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-linkedin
   omniauth-twitter
-  optimacms (= 0.3.13)
+  optimacms (= 0.3.14)
   optimacms_backups
   paperclip
   puma (~> 3.7)
