@@ -9,4 +9,9 @@ class DebugController < SiteBaseController
     @items = Optimacms::Page.page(1).per(3)
   end
 
+
+  def exception
+    raise 'debug exception'
+  end
+
 end
