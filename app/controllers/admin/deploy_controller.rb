@@ -1,6 +1,9 @@
 class Admin::DeployController < Admin::MyAdminBaseController
 
   def index
+    require_relative '../../../config/appdata/appdata_settings'
+
+    @repo_data = AppdataSettings.repo_app_site_data(Rails.env)
 
   end
 

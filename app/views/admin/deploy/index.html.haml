@@ -1,8 +1,50 @@
 %h1 Deploy
 
-%ul.list-inline#commands
-  %li=link_to 'Save changes', '#', :class=>'btn btn-primary btn-sm', :"data-name"=>'command', :"data-cmd"=>'server_save'
-  %li=link_to 'Get changes', '#', :class=>'btn btn-primary btn-sm', :"data-name"=>'command', :"data-cmd"=>'server_update'
+Remote repo with data: #{@repo_data}
+#commands
+
+  %h2 Save changes
+  Save current changes to remote repo
+  %br
+
+  =link_to 'Save changes', '#', :class=>'btn btn-primary btn-sm', :"data-name"=>'command', :"data-cmd"=>'server_save'
+  %br
+  %br
+  or<br>
+  * run on server
+  %pre
+    RAILS_ENV=#{Rails.env} rake appdata:save
+
+  * run from local project
+  %pre
+    cap #{Rails.env} deploy:appdata:server_save
+
+  %br
+  %br
+
+
+  %h2 Get changes
+  Get changes from remote repo
+  %br
+  =link_to 'Get changes', '#', :class=>'btn btn-primary btn-sm', :"data-name"=>'command', :"data-cmd"=>'server_update'
+  %br
+  %br
+
+  or<br>
+  * run on server
+  %pre
+    RAILS_ENV=#{Rails.env} rake appdata:update
+
+  * run from local project
+  %pre
+    cap #{Rails.env} deploy:appdata:server_update
+
+
+
+
+%h2 Help
+read more:
+=link_to 'TPL wiki', 'https://github.com/maxivak/rails-tpl/wiki/Synchronize-application-data'
 
 
 #status_commands.bg-info.well
@@ -40,3 +82,4 @@
 
     });
   }
+
