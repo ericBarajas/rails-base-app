@@ -17,6 +17,9 @@ or [download it](https://github.com/maxivak/rails-tpl/archive/master.zip)
 * Run `bundle install`
 * Run `rake db:migrate`
 
+* Run `yarn install`
+* Precompile assets 'RAILS_ENV=development rake assets:precompile'
+
 * Access site
 
 * Access admin area:
