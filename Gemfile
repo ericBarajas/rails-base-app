@@ -8,8 +8,9 @@ git_source(:github) do |repo_name|
 end
 
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.1'
+#gem 'rails', '5.0.5'
+gem 'rails', '5.1.3'
+
 
 # Use Puma as the app server
 group :development, :test do
@@ -20,7 +21,9 @@ end
 gem 'mysql2'
 
 #
-gem 'devise', '4.2.0' #, '3.5.6'
+#gem 'devise', '4.2.0' #, '3.5.6'
+gem 'devise', '4.3.0' #, '3.5.6'
+
 
 if Bundler::WINDOWS
   #gem 'bcrypt-ruby', '~> 3.0.0', require: false
@@ -50,8 +53,7 @@ gem 'omniauth-linkedin'
 
 #gem "active_admin-sortable_tree"
 
-gem 'optimacms', '0.3.14'
-#gem 'optimacms', '0.3.12', path: '/data/projects/myrails/cms/site'
+gem 'optimacms', '0.3.15'
 #gem 'optimacms', '0.3.2', github: 'maxivak/optimacms', branch: 'rails5-bootstrap4'
 #gem 'optimacms', '0.3.2', path: 'w:/myrails/cms/site', branch: 'rails5-bootstrap4'
 
@@ -68,27 +70,19 @@ gem 'globalize-accessors'
 
 
 #
-gem 'haml-rails', '~>0.9.0'
-#gem 'sass-rails', '~> 5.0.0'
+gem 'haml-rails', '1.0.0'
 gem 'sass-rails', '~> 5.0.6'
-#gem 'sass-rails', '>= 3.2'
 #gem 'compass-rails'#, '2.0.5'
 #gem 'sprockets-rails'#, '2.3.3'
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '3.2.0'
 #gem 'coffee-script-source', '1.8.0'
 #gem 'coffee-rails', '~> 4.2'
 #gem 'jquery-rails', '4.2.2' #,'4.0.3'
 gem 'jquery-rails', '4.3.1'
 gem 'font-awesome-rails', '~>4.7'
 
-# bootstrap v4 alpha
-#gem 'bootstrap', '~> 4.0.0.alpha6'
-gem 'bootstrap', '~> 4.0.0.beta'
-
-# Tooltips and popovers depend on tether for positioning. If you use them, add tether to the Gemfile:
-source 'https://rails-assets.org' do
-  gem 'rails-assets-tether', '>= 1.3.3'
-end
+# bootstrap v4
+#gem 'bootstrap', '~> 4.0.0.beta'
 
 
 #
@@ -117,7 +111,7 @@ gem 'jbuilder'
 
 gem 'kaminari'
 
-gem 'simple_form', '~>3.3.1'
+gem 'simple_form', '3.5.0'
 gem 'simple_search_filter', '0.1.1'
 #gem 'simple_search_filter', '~>0.0.31', github: 'maxivak/simple_search_filter', branch: 'bootstrap4'
 gem 'bootstrap_autocomplete_input', '0.2.0'

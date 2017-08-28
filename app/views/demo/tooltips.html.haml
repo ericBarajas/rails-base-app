@@ -1,0 +1,18 @@
+-#= javascript_include_tag :popper
+
+.container
+  %h1 Tooltips
+
+  %button.btn.btn-secondary(type="button" data-toggle="tooltip" data-placement="top" title="Tooltip on top")
+    Show me tooltip
+
+
+  %button(type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Text Tooltip on right")
+    Tooltip on right
+
+
+:javascript
+  $(document).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+
