@@ -474,7 +474,7 @@ GEM
       sass-rails (>= 5.0.4)
       simple_form
       simple_search_filter
-    optimacms_backups (0.0.10)
+    optimacms_backups (0.0.11)
       backup
       backup-remote
       optimacms
@@ -696,7 +696,7 @@ DEPENDENCIES
   omniauth-linkedin
   omniauth-twitter
   optimacms (= 0.3.15)
-  optimacms_backups (= 0.0.10)
+  optimacms_backups (= 0.0.11)
   paperclip
   puma (~> 3.7)
   rack-cache
