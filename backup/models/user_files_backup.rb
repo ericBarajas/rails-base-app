@@ -1,26 +1,36 @@
 # encoding: utf-8
 
+###
+
+
 Model.new(:user_files_backup, 'App files') do
 
   archive :files do |archive|
+    # follow symlinks
+    #https://github.com/backup/backup/issues/169
+
     archive.tar_options '-h'
 
+    #
     dir_app = $app_config[:path]
 
 
-    archive.add "#{dir_app}"
+    #archive.add "#{dir_app}"
+
+    in_dirs = ($backup_config['backup']['user_files']['include'] rescue []) || []
 
     ignore_dirs = %w[.idea .git .vagrant .ansible .chef]
-    ex_dirs_base = %w[tmp log]
-    in_dirs = ($backup_config['backup']['user_files']['include'] rescue []) || []
+    ex_dirs_base = %w[tmp log  ]
     ex_dirs = ($backup_config['backup']['user_files']['exclude'] rescue []) || []
 
     (in_dirs).each do |d|
-      archive.add "#{dir_app}#{d}"
+      dpath = (d=~ /^\//) ? d : "#{dir_app}#{d}"
+      archive.add dpath
     end
 
     (ignore_dirs+ex_dirs_base+ex_dirs).each do |d|
-      archive.exclude "#{dir_app}#{d}"
+      dpath = (d=~ /^\//) ? d : "#{dir_app}#{d}"
+      archive.exclude dpath
     end
 
   end
@@ -69,10 +79,20 @@ Model.new(:user_files_backup, 'App files') do
 
   ### notify
 
-  notify_by Mail do |mail|
-    c = $smtp_config
+  if $backup_config['notify']['mail']
 
+    notify_by Mail do |mail|
+      c = $smtp_config
 
+    end
   end
+
+  if $backup_config['notify']['slack']
+    notify_by Slack do |slack|
+
+    end
+  end
+
+
 
 end

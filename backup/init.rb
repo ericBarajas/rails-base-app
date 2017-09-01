@@ -7,7 +7,6 @@ root = File.absolute_path(File.dirname(__FILE__))
 current_dir = File.dirname(__FILE__)
 
 #
-#$backup_config  = YAML.load_file(File.join(current_dir, 'config', "#{$app_env}.yml"))
 #$backup_config  = YAML.load_file(File.join(Rails.root, 'config', 'backup', "#{$app_env}.yml"))
 $backup_config  = YAML.load_file(File.join(current_dir, '../config/backup', "#{$app_env}.yml"))
 #$backup_config  = OptimacmsBackups.backups_config
@@ -29,11 +28,10 @@ app_rails_secrets = YAML.load_file("#{$app_config[:path]}config/secrets.yml")[$r
 # db
 $db_config  = app_rails_secrets
 
-#puts "db: #{$db_config}"
-
 
 # smtp
 $smtp_config = app_rails_secrets['smtp']
+
 
 
 

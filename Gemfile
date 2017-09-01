@@ -32,7 +32,8 @@ else
   gem 'bcrypt', '~> 3.1.10', require: false
 end
 
-gem 'net-ssh', '4.0.1'
+gem 'net-ssh', '3.2.0' # for backup gem
+#gem 'net-ssh', '4.0.1' #ok - 2017-aug
 #gem 'net-ssh', '3.1.1'
 #gem 'net-ssh', '3.1.1', github: 'maxivak/net-ssh', :branch => '3-1-release'
 #gem 'net-ssh', '4.0.0.alpha3'
@@ -59,7 +60,10 @@ gem 'optimacms', '0.3.15'
 
 #gem 'rails_themes_bootstrap', '0.0.2',:git => 'git://github.com/maxivak/rails_themes_bootstrap.git'
 
-gem 'optimacms_backups'
+gem 'backup', '4.4.0'
+gem 'backup-remote', '0.0.17'
+gem 'optimacms_backups', '0.0.11'
+
 
 #gem 'globalize', '5.1.0.beta1', github: 'globalize/globalize'
 gem 'globalize', github: 'globalize/globalize'
