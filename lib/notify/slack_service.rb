@@ -12,9 +12,9 @@ module Notify
     def self.get_client
       return @@client unless @@client.nil?
 
-      @@client = Slack::Notifier.new Rails.application.secrets.slack_notify_webhook_url do
-        defaults channel: Rails.application.secrets.slack_notify_channel,
-                 username: Rails.application.secrets.slack_notify_username
+      @@client = Slack::Notifier.new Rails.application.secrets.slack[:errors][:webhook_url] do
+        defaults channel: Rails.application.secrets.slack[:errors][:channel],
+                 username: Rails.application.secrets.slack[:errors][:username]
       end
 
       return @@client
