@@ -41,7 +41,7 @@
 
     # log error
     begin
-      Notify::SlackService.notify_exception(exception)
+      Notify::SlackService.notify_exception(exception, request)
     rescue => e
       logger.info "Exception: #{exception.message}, #{exception.backtrace}"
       logger.info "Exception: #{e.message}, #{e.backtrace}"
