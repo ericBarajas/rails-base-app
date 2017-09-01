@@ -25,3 +25,9 @@ config/secrets.yml
 
 # Ignore Byebug command history file.
 .byebug_history
+
+
+
+backup/.data
+backup/.tmp
+backup/log
