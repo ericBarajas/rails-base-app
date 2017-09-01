@@ -27,6 +27,10 @@ config/secrets.yml
 .byebug_history
 
 
+node_modules/
+
+
+
 
 backup/.data
 backup/.tmp
