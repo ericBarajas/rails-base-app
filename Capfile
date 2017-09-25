@@ -22,6 +22,8 @@ require 'capistrano/deploy'
 require 'capistrano/rvm'
 require 'capistrano/rails'
 
+require 'capistrano/yarn'
+
 # require 'capistrano/rbenv'
 # require 'capistrano/chruby'
 #require 'capistrano/bundler' # ??
