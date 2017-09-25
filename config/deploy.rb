@@ -119,4 +119,5 @@ end
 before "deploy", "deploy:web:disable"
 after "deploy", "deploy:web:enable"
 
-after "deploy", "deploy:restart"
+#after "deploy", "deploy:restart"
+after 'deploy:publishing', 'deploy:restart'
