@@ -21,13 +21,6 @@ module Optimacms
 
 
             {
-                title: 'App data', route: nil,
-                submenu: [
-                    make_page('Deploy', '/deploy'),
-
-                ]
-            },
-            {
                 title: 'Backups', route: nil,
                 submenu: [
                     {title: 'Backups', url: '/'+Optimacms.admin_namespace+'/backups' },

@@ -16,14 +16,6 @@ Rails.application.routes.draw do
   scope '/'+Optimacms.admin_namespace do
     scope module: 'admin', as: 'admin' do
 
-      resources :deploy, only: [:index] do
-        collection do
-          get 'server_save'
-          get 'server_update'
-
-        end
-      end
-
     end
   end
 

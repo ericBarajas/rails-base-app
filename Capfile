@@ -1,7 +1,4 @@
-﻿# appdata settings
-require_relative 'config/appdata/appdata_settings'
-
-
+﻿
 # Load DSL and set up stages
 require 'capistrano/setup'
 
@@ -33,6 +30,14 @@ require 'capistrano/yarn'
 #require 'capistrano/touch-linked-files'
 #require 'capistrano/upload-config'
 #require "capistrano/rsync"
+
+
+# load optimacms tasks
+#require_relative 'config/appdata/appdata_settings'
+gem_optimacms = Gem::Specification.find_by_name 'optimacms'
+Dir.glob("#{gem_optimacms.gem_dir}/tasks/capistrano/*.rake").each { |r| import r}
+
+
 
 
 # Load custom tasks from `lib/capistrano/tasks' if you have any defined

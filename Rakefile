@@ -3,9 +3,11 @@
 
 require_relative 'config/application'
 
-# appdata settings
-require_relative 'config/appdata/appdata_settings'
+# optimacms tasks
+gem_optimacms = Gem::Specification.find_by_name 'optimacms'
+Dir.glob("#{gem_optimacms.gem_dir}/tasks/**/*.rake").each { |r| load r}
 
+#
 Dir.glob('tasks/*.rake').each { |r| load r}
 Dir.glob('tasks/**/*.rake').each { |r| load r}
 

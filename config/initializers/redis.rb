@@ -1,1 +1,1 @@
-$redis = Redis.new(:host => 'localhost', :port => 6379)
+$redis = Redis.new(:host => Rails.application.secrets.redis_host, :port => Rails.application.secrets.redis_port)
