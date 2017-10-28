@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/maxivak/optimacms.git
-  revision: 435a3f14c6e3afb21eea6f0388ee9a8db36d2073
+  revision: 83481d816cf05691f314c4ba7cea69cccb87e11a
   specs:
     optimacms (0.3.16)
       ancestry

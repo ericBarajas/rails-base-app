@@ -54,12 +54,9 @@ gem 'omniauth-linkedin'
 
 #gem "active_admin-sortable_tree"
 
-#gem 'optimacms', '0.3.15'
 gem 'optimacms', github: 'maxivak/optimacms'
-
-
-#gem 'optimacms', '0.3.2', github: 'maxivak/optimacms', branch: 'rails5-bootstrap4'
-#gem 'optimacms', '0.3.2', path: 'w:/myrails/cms/site', branch: 'rails5-bootstrap4'
+#gem 'optimacms', '0.3.15'
+#gem 'optimacms',  path: '/data/projects/myrails/cms/site'
 
 #gem 'rails_themes_bootstrap', '0.0.2',:git => 'git://github.com/maxivak/rails_themes_bootstrap.git'
 
