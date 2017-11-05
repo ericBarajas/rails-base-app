@@ -1,13 +1,28 @@
-%h1 Page not found
-%br
-.alert.alert-danger
-  %p
-    The page you request doesn't exist
-    %br
-    Check address in browser
-%p
-  Go to:
-  %ul
-    %li=link_to 'Home', root_path
-  %br
-  %br
+!!!
+%html
+  %head
+    %title Error
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    = stylesheet_link_tag    'application', media: 'all'
+
+    = csrf_meta_tag
+
+
+  %body
+    .container
+      %h1 Page not found
+      %br
+      .alert.alert-danger
+        %p
+          The page you request doesn't exist
+          %br
+          Check address in browser
+      %p
+        Go to:
+        %ul
+          %li=link_to 'Home', root_path
+        %br
+        %br
