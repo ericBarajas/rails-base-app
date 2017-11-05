@@ -1,6 +1,6 @@
 ﻿source 'https://rubygems.org'
 
-ruby "2.3.3"
+ruby "2.4.2"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -8,7 +8,6 @@ git_source(:github) do |repo_name|
 end
 
 
-#gem 'rails', '5.0.5'
 gem 'rails', '5.1.3'
 
 
@@ -34,10 +33,7 @@ end
 
 gem 'net-ssh', '3.2.0' # for backup gem
 #gem 'net-ssh', '4.0.1' #ok - 2017-aug
-#gem 'net-ssh', '3.1.1'
 #gem 'net-ssh', '3.1.1', github: 'maxivak/net-ssh', :branch => '3-1-release'
-#gem 'net-ssh', '4.0.0.alpha3'
-#gem 'bcrypt', '~> 3.1.7'
 
 #
 gem 'omniauth'
@@ -48,20 +44,21 @@ gem 'omniauth-linkedin'
 
 #
 #gem 'activeadmin', '1.0.0.pre2' # bad
-
 #gem 'activeadmin', github: 'activeadmin'
 #gem 'inherited_resources', github: 'activeadmin/inherited_resources'
-
 #gem "active_admin-sortable_tree"
+
 
 gem 'optimacms', github: 'maxivak/optimacms'
 #gem 'optimacms', '0.3.15'
-#gem 'optimacms',  path: '/data/projects/myrails/cms/site'
+#gem 'optimacms', path: '/data/projects/myrails/cms/site'
 
 #gem 'rails_themes_bootstrap', '0.0.2',:git => 'git://github.com/maxivak/rails_themes_bootstrap.git'
 
-gem 'backup', '4.4.0'
-gem 'backup-remote', '0.0.17'
+gem 'backup', '5.0.0.beta.2'
+#gem 'backup', '4.4.0'
+gem 'backup-remote', '0.0.18'
+#gem 'backup-remote', '0.0.17', path: '/data/projects/backup-remote'
 gem 'optimacms_backups', '0.0.12'
 
 
@@ -107,7 +104,7 @@ gem 'jbuilder'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 #gem 'therubyracer', platforms: :ruby
 #gem 'execjs'
-
+#gem 'json' #, '1.8.5'
 
 
 
@@ -150,10 +147,8 @@ end
 
 # deployment
 group :development do
-  gem 'capistrano',  '3.7.1'
-  #gem 'capistrano',  '3.4.0'
+  gem 'capistrano',  '3.10.0'
   gem 'capistrano-rails', '1.1.7'
-  #gem 'capistrano-rails', '1.1.3'
   gem 'capistrano-bundler', '1.1.4'
   gem 'capistrano-rvm',   '0.1.2'
 
