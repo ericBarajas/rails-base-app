@@ -2,7 +2,13 @@
 
 @import "variables";
 
-@import "bootstrap4/bootstrap";
+
+
+// Bootstrap and its default variables
+@import "bootstrap/scss/bootstrap";
+
+// my tpl
+@import "tpl";
 
 
 
