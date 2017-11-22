@@ -6,9 +6,9 @@ View demo online: http://tpl.optimacms.com
 
 * Clone the git repo
 ```ruby
-git clone https://github.com/maxivak/rails-tpl
+git clone https://github.com/maxivak/rails-base-app
 ```
-or [download it](https://github.com/maxivak/rails-tpl/archive/master.zip)
+or [download it](https://github.com/maxivak/rails-base-app/archive/master.zip)
 
 * Create database
 * Import mysql dump from '__db' folder into database
@@ -43,6 +43,6 @@ password
 
 
 ## Documentation
-[Wiki](https://github.com/maxivak/rails-tpl/wiki)
+[Wiki](https://github.com/maxivak/rails-base-app/wiki)
 
 
