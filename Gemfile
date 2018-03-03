@@ -116,7 +116,7 @@ gem 'simple_search_filter', '0.1.1'
 gem 'bootstrap_autocomplete_input', '0.2.0'
 
 
-gem 'paperclip'#, '~> 4.2'
+gem 'paperclip', '~> 5.2.0'
 gem 'ancestry'
 
 
