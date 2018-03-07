@@ -4,7 +4,7 @@
 
 
 Model.new(:db_backup, 'Backup DB of Rails app') do
-  database MySQL, :gex do |db|
+  database MySQL, :db do |db|
     db.name           = $db_config['db']
     db.host           = $db_config['db_host']
     db.username       = $db_config['db_user']
