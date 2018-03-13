@@ -2,6 +2,10 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+--
+-- Database: `my_base_app`
+--
+
 -- --------------------------------------------------------
 
 --
@@ -123,8 +127,7 @@ INSERT INTO `cms_pages` (`id`, `title`, `name`, `url`, `url_parts_count`, `url_v
 (97, 'Home', 'home', '', 0, 0, '^$', NULL, NULL, 0, 0, 2, '', 127, 1, 0, 0, 'home#index', '2013-07-10 10:10:21', '2017-11-24 18:04:44', 1),
 (98, 'Dev debug', 'dev', 'dev/', 1, 0, 'dev/', 93, NULL, 1, 0, 0, '', 16, NULL, 0, 0, '', '2013-07-11 02:21:30', '0000-00-00 00:00:00', 1),
 (126, 'Contacts', 'contacts', 'contacts.html', 1, 0, 'contacts[.]html', 24, NULL, 1, 0, 0, '', 4, NULL, 0, 0, '', '2014-03-15 21:27:00', '2015-03-22 01:45:36', 1),
-(153, 'error500', 'error500', 'errors/500', 2, 0, '^errors\\/500', 93, NULL, 0, 0, 0, NULL, NULL, 1, NULL, 0, '', '2015-05-13 23:37:26', '2015-05-13 23:37:26', 1),
-(154, 'p1', 'p1', 'p1', 1, 0, '^p1$', 24, NULL, 0, 0, 0, NULL, 130, 1, NULL, 0, 'demo#p1', '2017-11-24 18:06:00', '2017-11-24 18:06:22', 1);
+(153, 'error500', 'error500', 'errors/500', 2, 0, '^errors\\/500', 93, NULL, 0, 0, 0, NULL, NULL, 1, NULL, 0, '', '2015-05-13 23:37:26', '2015-05-13 23:37:26', 1);
 
 -- --------------------------------------------------------
 
@@ -170,10 +173,7 @@ INSERT INTO `cms_pages_translation` (`id`, `item_id`, `page_id`, `lang`, `meta_t
 (344, 13, NULL, 'ru', '', '', '', NULL),
 (345, 153, NULL, '', '', '', '', NULL),
 (346, 153, NULL, 'en', '', '', '', NULL),
-(347, 153, NULL, 'ru', '', '', '', NULL),
-(348, 154, NULL, '', '', '', '', NULL),
-(349, 154, NULL, 'en', '', '', '', NULL),
-(350, 154, NULL, 'ru', '', '', '', NULL);
+(347, 153, NULL, 'ru', '', '', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -211,7 +211,6 @@ INSERT INTO `cms_templates` (`id`, `title`, `name`, `basename`, `basepath`, `bas
 (127, 'home', NULL, 'index', 'home/index', 'home/', 2, 'haml', NULL, 0, '2015-05-13 23:12:20', '2015-05-13 23:12:20', 0, 1, '126'),
 (128, 'Sitemap', NULL, 'sitemap', 'textpages/sitemap', 'textpages/', 2, 'html', NULL, 0, '2015-05-13 23:26:11', '2015-05-13 23:26:11', 0, 1, '125'),
 (129, 'test img', NULL, 'test_img', 'textpages/test_img', 'textpages/', 2, 'html', NULL, 0, '2015-05-17 14:19:13', '2015-05-17 14:19:13', 0, 1, '125'),
-(130, 'p1', NULL, 'p1', 'textpages/p1', 'textpages/', 2, 'haml', NULL, 0, '2017-11-24 18:06:12', '2017-11-24 18:06:12', 0, 1, '125'),
 (131, 'layouts', NULL, 'layouts', 'layouts', '', NULL, NULL, NULL, 0, '2018-03-13 17:21:50', '2018-03-13 17:21:50', 1, 1, NULL),
 (132, 'basic', NULL, 'basic', 'layouts/basic', 'layouts/', 1, 'haml', NULL, 0, '2018-03-13 17:22:45', '2018-03-13 17:22:45', 0, 1, '131'),
 (133, 'wide', NULL, 'wide', 'layouts/wide', 'layouts/', 1, 'haml', NULL, 0, '2018-03-13 17:23:02', '2018-03-13 17:23:02', 0, 1, '131');
@@ -236,7 +235,6 @@ CREATE TABLE `cms_templates_translation` (
 INSERT INTO `cms_templates_translation` (`id`, `item_id`, `lang`) VALUES
 (2, 1, ''),
 (1, 127, ''),
-(3, 130, ''),
 (4, 132, ''),
 (5, 133, '');
 
