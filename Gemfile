@@ -48,8 +48,8 @@ gem 'omniauth-linkedin'
 #gem "active_admin-sortable_tree"
 
 
-gem 'optimacms', github: 'maxivak/optimacms'
-#gem 'optimacms', '0.3.15'
+gem 'optimacms', '0.3.23'
+#gem 'optimacms', github: 'maxivak/optimacms'
 #gem 'optimacms', path: '/data/projects/myrails/cms/site'
 
 #gem 'rails_themes_bootstrap', '0.0.2',:git => 'git://github.com/maxivak/rails_themes_bootstrap.git'
@@ -70,13 +70,8 @@ gem 'globalize-accessors'
 #
 gem 'haml-rails', '1.0.0'
 gem 'sass-rails', '~> 5.0.6'
-#gem 'compass-rails'#, '2.0.5'
-#gem 'sprockets-rails'#, '2.3.3'
 gem 'uglifier', '3.2.0'
-#gem 'coffee-script-source', '1.8.0'
-#gem 'coffee-rails', '~> 4.2'
-#gem 'jquery-rails', '4.2.2' #,'4.0.3'
-gem 'jquery-rails', '4.3.1'
+gem 'jquery-rails', '4.3.1' # '4.2.2','4.0.3'
 gem 'font-awesome-rails', '~>4.7'
 
 # bootstrap v4
