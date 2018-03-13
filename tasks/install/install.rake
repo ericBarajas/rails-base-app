@@ -1,5 +1,0 @@
-namespace :install do
-
-
-
-end
