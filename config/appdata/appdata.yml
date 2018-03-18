@@ -1,35 +1,133 @@
+
 default: &default
-  repo_app_core: "ssh://git@github.com/myapp.git"
+  code:
+    storage:
+      remote_repo: "github.com/maxivak/rails-base-app.git"
 
-  repo_app_data_dir_name: "repo-data"
-  repo_app_data_dir_base: "tmp"
-
-  # dirs to sync
-  site_app_data_dirs:
-    - app/assets
-    - app/views
-
-  # dirs not to sync
-  site_user_data_dirs:
-    - public/system
-    - public/uploads
-    - public/img
 
 
 development:
   <<: *default
-  repo_app_site_data: "ssh://git@github.com/myapp-data.git"
-  repo_app_data_dir_base: "tmp"
+
+  content:
+
+    -
+      name: "views"
+
+      dirs:
+        - app/assets
+        - app/views
+
+
+      storage:
+        type: git
+        remote_repo: "github.com/maxivak/rails-base-app-data.git"
+        local_repo_dir: "/data/projects/mysites/site_rails_base_app/repo-data"
+        remote_repo_ssh_key: "/data/keys/base_app/id_rsa"
 
 
 
-beta:
-  <<: *default
-  repo_app_site_data: "ssh://git@github.com/myapp-data.git"
-  repo_app_data_dir_base: "tmp"
+
+    -
+      name: "images"
+
+      dirs:
+        - public/img
+
+      exclude:
+        - tmp
+
+
+      storage:
+        type: ssh
+        host: "mystorage.com"
+        ssh_port: 22
+        path: "/data/baseapp/repo-images"
+        ssh_user: "baseapp"
+        ssh_password: "mypass"
+        #ssh_key: "/home/myuser/.ssh/id_rsa"
+
+
+
+    -
+      name: "uploads"
+
+      dirs:
+        - public/uploads
+
+
+      storage:
+        type: ssh
+        host: "mystorage.com"
+        ssh_port: 22
+        path: "/data/baseapp/repo-uploads"
+        ssh_user: "baseapp"
+        ssh_password: "mypass"
+        #ssh_key: "/home/myuser/.ssh/id_rsa"
+
+
+
+
+
+
 
 
 production:
   <<: *default
-  repo_app_site_data: "ssh://git@github.com/myapp-data.git"
-  repo_app_data_dir_base: "../.."
+
+
+  content:
+    -
+      name: "views"
+
+      dirs:
+        - app/assets
+        - app/views
+
+
+      storage:
+        type: git
+        remote_repo: "github.com/maxivak/rails-base-app-data.git"
+        local_repo_dir: "/apps/site_rails_base_app/repo-data"
+        remote_repo_ssh_key: "/keys/baseapp/id_rsa"
+
+
+
+    -
+      name: "images"
+
+      dirs:
+        - public/img
+
+      exclude:
+        - tmp
+
+
+      storage:
+        type: ssh
+        host: "mystorage.com"
+        ssh_port: 22
+        path: "/data/baseapp/repo-images"
+        ssh_user: "baseapp"
+        #ssh_password: "pwd"
+        #ssh_key: "/home/myuser/.ssh/id_rsa"
+
+
+    -
+      name: "uploads"
+
+      dirs:
+        - public/uploads
+
+      storage:
+        type: ssh
+        host: "mystorage.com"
+        ssh_port: 22
+        path: "/data/baseapp/repo-uploads"
+        ssh_user: "baseapp"
+        #ssh_password: "pwd"
+        #ssh_key: "/home/myuser/.ssh/id_rsa"
+
+
+
+
