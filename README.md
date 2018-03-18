@@ -1,6 +1,9 @@
-﻿# My Rails demo app
+﻿# Rails base app
 
-View demo online: http://tpl.optimacms.com
+View demo online: http://demo.optimacms.com
+
+* based on [OptimaCMS](https://github.com/maxivak/optimacms)
+
 
 ## Quick start
 
@@ -49,7 +52,9 @@ password
 * Imagemagick (For uploading pictures)
 
 
+## Setup
 
+[Read Wiki](https://github.com/maxivak/rails-base-app/wiki/installation)
 
 ## Documentation
 [Wiki](https://github.com/maxivak/rails-base-app/wiki)
