@@ -1,39 +1,27 @@
+set :log_level, :debug
+
 ﻿set :application, 'myapp'
 set :rails_env, 'production'
 set :branch, "master"
 
-
-set :log_level, :debug
-
-#
-server_ip = '11.22.33.44'
-server_user = 'app'
-server_pwd = 'pass'
-server_ssh_port = 22
-
-
-
-#
-role :app, [server_ip]
-role :web, [server_ip]
-role :db,  [server_ip]
-
-
-#
-set :deploy_user, 'app'
-
-
 # rvm
-set :rvm_type, :system                     # Defaults to: :auto
-#set :rvm_ruby_version, '2.0.0-p247'      # Defaults to: 'default'
-#set :rvm_custom_path, '~/.myveryownrvm'  # only needed if not detected
+set :rvm_type, :system
+set :rvm_ruby_version, '2.4.2'
 
 
-#
-server server_ip, user: server_user, roles: %w{web}, primary: true, port: server_ssh_port
+# server
+host = 'mysite.com'
+ssh_port = 22
+u = 'myuser'
+pwd = 'mypwd'
 
-set :deploy_to, "/path/to/apps/#{fetch(:application)}"
 
 
-set :ssh_options, { forward_agent: true, user: server_user, password: server_pwd}
+set :deploy_user, u
 
+
+server host, user: u, password: pwd, port: ssh_port, roles: %w{web app}, primary: true
+
+set :deploy_to, "/home/app/apps/#{fetch(:application)}"
+
+set :ssh_options, { forward_agent: true, paranoid: false, user: u,  password: pwd }
