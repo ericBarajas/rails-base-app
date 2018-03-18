@@ -41,25 +41,20 @@ gem 'omniauth-twitter'
 gem 'omniauth-linkedin'
 #gem 'certified'
 
-#
-#gem 'activeadmin', '1.0.0.pre2' # bad
-#gem 'activeadmin', github: 'activeadmin'
-#gem 'inherited_resources', github: 'activeadmin/inherited_resources'
-#gem "active_admin-sortable_tree"
 
 
-gem 'optimacms', '0.3.23'
+
+gem 'optimacms', '0.3.24'
 #gem 'optimacms', github: 'maxivak/optimacms'
 #gem 'optimacms', path: '/data/projects/myrails/cms/site'
 
-#gem 'rails_themes_bootstrap', '0.0.2',:git => 'git://github.com/maxivak/rails_themes_bootstrap.git'
+
 
 gem 'backup', '5.0.0.beta.2'
 #gem 'backup', '4.4.0'
 gem 'backup-remote', '0.0.18'
 #gem 'backup-remote', '0.0.17', path: '/data/projects/backup-remote'
 gem 'optimacms_backups', '0.0.12'
-
 
 
 gem 'globalize', github: 'globalize/globalize'
