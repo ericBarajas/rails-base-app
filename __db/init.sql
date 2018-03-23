@@ -3,14 +3,12 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Mar 13, 2018 at 07:13 PM
+-- Generation Time: Mar 23, 2018 at 08:23 PM
 -- Server version: 5.7.15
 -- PHP Version: 5.6.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
 
 --
 -- Database: `my_base_app`
@@ -318,7 +316,7 @@ CREATE TABLE `cms_users` (
 --
 
 INSERT INTO `cms_users` (`id`, `username`, `email`, `is_superadmin`, `encrypted_password`, `reset_password_token`, `reset_password_sent_at`, `remember_created_at`, `sign_in_count`, `current_sign_in_at`, `last_sign_in_at`, `current_sign_in_ip`, `last_sign_in_ip`, `created_at`, `updated_at`) VALUES
-(3, '', 'admin@example.com', 0, '$2a$10$9OVgqhpJLf5eVRy66CT19.qvnGfu2mtkHxRM/hQdhHlK/Yb58.DbC', NULL, NULL, NULL, 17, '2018-03-13 17:16:52', '2018-03-07 13:47:32', '127.0.0.1', '127.0.0.1', '2015-05-13 22:48:20', '2018-03-13 17:16:52');
+(3, '', 'admin@example.com', 0, '$2a$10$qx6DGnJMbQ7S.QEZRMM0DOwjG5qKZwMcffC15eYcodSE8zlXgIeWe', NULL, NULL, NULL, 19, '2018-03-17 21:56:50', '2018-03-13 19:20:47', '127.0.0.1', '127.0.0.1', '2015-05-13 22:48:20', '2018-03-17 21:56:50');
 
 -- --------------------------------------------------------
 
@@ -448,12 +446,12 @@ ALTER TABLE `cms_mediafiles`
 -- AUTO_INCREMENT for table `cms_pages`
 --
 ALTER TABLE `cms_pages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=155;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
 --
 -- AUTO_INCREMENT for table `cms_pages_translation`
 --
 ALTER TABLE `cms_pages_translation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=351;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=348;
 --
 -- AUTO_INCREMENT for table `cms_templates`
 --
@@ -478,4 +476,4 @@ ALTER TABLE `cms_template_data_relations`
 -- AUTO_INCREMENT for table `cms_users`
 --
 ALTER TABLE `cms_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
