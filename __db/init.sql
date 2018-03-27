@@ -3,12 +3,14 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Mar 23, 2018 at 08:23 PM
+-- Generation Time: Mar 27, 2018 at 06:04 PM
 -- Server version: 5.7.15
 -- PHP Version: 5.6.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
+
 
 --
 -- Database: `my_base_app`
@@ -105,7 +107,7 @@ CREATE TABLE `cms_pages` (
   `url_parts_count` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
   `url_vars_count` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
   `parsed_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `parent_id` int(11) DEFAULT '0',
+  `parent_id` int(11) DEFAULT NULL,
   `view_path` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `is_translated` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
   `status` int(11) NOT NULL DEFAULT '0',
@@ -316,7 +318,7 @@ CREATE TABLE `cms_users` (
 --
 
 INSERT INTO `cms_users` (`id`, `username`, `email`, `is_superadmin`, `encrypted_password`, `reset_password_token`, `reset_password_sent_at`, `remember_created_at`, `sign_in_count`, `current_sign_in_at`, `last_sign_in_at`, `current_sign_in_ip`, `last_sign_in_ip`, `created_at`, `updated_at`) VALUES
-(3, '', 'admin@example.com', 0, '$2a$10$qx6DGnJMbQ7S.QEZRMM0DOwjG5qKZwMcffC15eYcodSE8zlXgIeWe', NULL, NULL, NULL, 19, '2018-03-17 21:56:50', '2018-03-13 19:20:47', '127.0.0.1', '127.0.0.1', '2015-05-13 22:48:20', '2018-03-17 21:56:50');
+(3, 'admin', 'admin@example.com', 0, '$2a$10$qx6DGnJMbQ7S.QEZRMM0DOwjG5qKZwMcffC15eYcodSE8zlXgIeWe', NULL, NULL, NULL, 21, '2018-03-23 22:40:40', '2018-03-23 22:40:20', '127.0.0.1', '127.0.0.1', '2015-05-13 22:48:20', '2018-03-23 22:40:40');
 
 -- --------------------------------------------------------
 
@@ -477,3 +479,4 @@ ALTER TABLE `cms_template_data_relations`
 --
 ALTER TABLE `cms_users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
