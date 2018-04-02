@@ -17,7 +17,7 @@ group :development, :test do
 end
 
 #
-gem 'mysql2'
+gem 'mysql2', '0.4.10'
 
 #
 gem 'devise', '4.3.0' #, '3.5.6'
@@ -42,19 +42,18 @@ gem 'omniauth-linkedin'
 #gem 'certified'
 
 
-
-
-gem 'optimacms', '0.3.24'
+gem 'optimacms', '0.3.30'
 #gem 'optimacms', github: 'maxivak/optimacms'
 #gem 'optimacms', path: '/data/projects/myrails/cms/site'
 
+gem 'simple_options', '0.0.5'
+gem 'optimacms_options', '0.0.10'
 
 
 gem 'backup', '5.0.0.beta.2'
 #gem 'backup', '4.4.0'
 gem 'backup-remote', '0.0.18'
-#gem 'backup-remote', '0.0.17', path: '/data/projects/backup-remote'
-gem 'optimacms_backups', '0.0.12'
+gem 'optimacms_backups', '0.0.14'
 
 
 gem 'globalize', github: 'globalize/globalize'
@@ -69,8 +68,7 @@ gem 'uglifier', '3.2.0'
 gem 'jquery-rails', '4.3.1' # '4.2.2','4.0.3'
 gem 'font-awesome-rails', '~>4.7'
 
-# bootstrap v4
-#gem 'bootstrap', '~> 4.0.0.beta'
+
 
 
 #
@@ -101,11 +99,10 @@ gem 'kaminari'
 
 gem 'simple_form', '3.5.0'
 gem 'simple_search_filter', '0.1.1'
-#gem 'simple_search_filter', '~>0.0.31', github: 'maxivak/simple_search_filter', branch: 'bootstrap4'
 gem 'bootstrap_autocomplete_input', '0.2.0'
 
 
-gem 'paperclip', '~> 5.2.0'
+gem 'paperclip', '5.2.1'
 gem 'ancestry'
 
 

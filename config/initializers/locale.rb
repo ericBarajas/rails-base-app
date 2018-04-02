@@ -5,6 +5,10 @@ Rails.application.config.time_zone = 'Europe/Kiev'
 #Rails.application.config.i18n.enforce_available_locales = false
 I18n.enforce_available_locales = false
 
+#I18n.available_locales = [:en, :ru]
+
+
+
 #config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
 #I18n.load_path += Dir[Rails.root.join('lib', 'locale', '*.{rb,yml}')]
 

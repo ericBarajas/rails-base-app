@@ -15,18 +15,6 @@
   end
 
 
-  def addcmsuser
-    return
-
-    row = Optimacms::CmsAdminUser.new
-    row.email = 'admin@example.com'
-    row.password = 'password'
-
-    row.save
-
-  end
-
-
   # exceptions
 
   #unless Rails.application.config.consider_all_requests_local
@@ -63,6 +51,12 @@
   end
 
 
+
+  ### callbacks for CMS
+  def before_page_render
+    #set_locale
+
+  end
 
 
   ### locale

@@ -6,4 +6,8 @@ class DemoController < SiteBaseController
   end
 
 
+  def p1
+
+  end
+
 end

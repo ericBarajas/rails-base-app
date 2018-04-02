@@ -4,26 +4,23 @@ module Optimacms
       include Optimacms::Concerns::AdminMenu::AdminMenu
 
       def self.make_page(t, u)
-        {title: t, url: '/'+Optimacms.admin_namespace+u }
+        {title: t, url: '/'+Optimacms.config.admin_namespace+u }
       end
 
       def self.get_menu_custom
         [
-=begin
+
             {
-                title: 'Catalog', route: nil,
+                title: 'Settings', route: nil,
                 submenu: [
-                    {title: 'Products', url: '/'+Optimacms.admin_namespace+'/products' },
-                    {title: 'Categories', url: '/'+Optimacms.admin_namespace+'/categories' },
+                    {title: 'Settings', url: '/'+Optimacms.config.admin_namespace+'/options' },
                 ]
             },
-=end
-
 
             {
                 title: 'Backups', route: nil,
                 submenu: [
-                    {title: 'Backups', url: '/'+Optimacms.admin_namespace+'/backups' },
+                    {title: 'Backups', url: '/'+Optimacms.config.admin_namespace+'/backups' },
                 ]
             }
 

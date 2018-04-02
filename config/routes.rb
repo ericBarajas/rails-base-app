@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   # admin
 
-  scope '/'+Optimacms.admin_namespace do
+  scope '/'+Optimacms.config.admin_namespace do
     scope module: 'admin', as: 'admin' do
 
     end
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
 
   ### optimacms gems
-  #mount OptimacmsOptions::Engine => "/", :as => "cms_options"
+  mount OptimacmsOptions::Engine => "/", :as => "cms_options"
   mount OptimacmsBackups::Engine => "/", :as => "cms_backups"
 
   # !!! LAST row
