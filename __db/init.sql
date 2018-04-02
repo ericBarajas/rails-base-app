@@ -3,14 +3,12 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Mar 27, 2018 at 06:04 PM
+-- Generation Time: Apr 02, 2018 at 02:32 PM
 -- Server version: 5.7.15
 -- PHP Version: 5.6.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
 
 --
 -- Database: `my_base_app`
@@ -318,7 +316,25 @@ CREATE TABLE `cms_users` (
 --
 
 INSERT INTO `cms_users` (`id`, `username`, `email`, `is_superadmin`, `encrypted_password`, `reset_password_token`, `reset_password_sent_at`, `remember_created_at`, `sign_in_count`, `current_sign_in_at`, `last_sign_in_at`, `current_sign_in_ip`, `last_sign_in_ip`, `created_at`, `updated_at`) VALUES
-(3, 'admin', 'admin@example.com', 0, '$2a$10$qx6DGnJMbQ7S.QEZRMM0DOwjG5qKZwMcffC15eYcodSE8zlXgIeWe', NULL, NULL, NULL, 21, '2018-03-23 22:40:40', '2018-03-23 22:40:20', '127.0.0.1', '127.0.0.1', '2015-05-13 22:48:20', '2018-03-23 22:40:40');
+(3, 'admin', 'admin@example.com', 0, '$2a$10$qx6DGnJMbQ7S.QEZRMM0DOwjG5qKZwMcffC15eYcodSE8zlXgIeWe', NULL, NULL, NULL, 23, '2018-04-02 14:30:31', '2018-03-31 21:14:56', '127.0.0.1', '127.0.0.1', '2015-05-13 22:48:20', '2018-04-02 14:30:31');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `options`
+--
+
+DROP TABLE IF EXISTS `options`;
+CREATE TABLE `options` (
+  `id` bigint(20) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `option_type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8_unicode_ci,
+  `is_changed` tinyint(1) NOT NULL DEFAULT '1',
+  `category` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `value` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -425,6 +441,13 @@ ALTER TABLE `cms_users`
   ADD UNIQUE KEY `index_optimacms_cms_users_on_reset_password_token` (`reset_password_token`);
 
 --
+-- Indexes for table `options`
+--
+ALTER TABLE `options`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `index_options_on_name` (`name`);
+
+--
 -- Indexes for table `schema_migrations`
 --
 ALTER TABLE `schema_migrations`
@@ -479,4 +502,8 @@ ALTER TABLE `cms_template_data_relations`
 --
 ALTER TABLE `cms_users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+--
+-- AUTO_INCREMENT for table `options`
+--
+ALTER TABLE `options`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
