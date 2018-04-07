@@ -25,9 +25,6 @@ module Myapp
     config.autoload_paths << Rails.root.join("lib")
     config.eager_load_paths << Rails.root.join("lib")
 
-    #
-    config.SITE_NAME = 'myapp'
-    config.redis_prefix = 'myapp'
 
   end
 end
