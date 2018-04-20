@@ -1,5 +1,8 @@
 ## 2018-april
 
+* Bootstrap v.4.1
+* CSS variables
+
 * new config for Optimacms with config/optimacms.yml
 
 * added Options to Admin Area
