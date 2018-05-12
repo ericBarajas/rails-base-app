@@ -6,6 +6,9 @@ Rails.application.config.assets.version = '1.0'
 # yarn
 Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
+Rails.application.config.assets.paths << Optimacms::Engine.root.join('node_modules')
+
+
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 

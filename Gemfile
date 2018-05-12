@@ -42,7 +42,7 @@ gem 'omniauth-linkedin'
 #gem 'certified'
 
 
-gem 'optimacms', '0.3.30'
+gem 'optimacms', '0.3.34'
 #gem 'optimacms', github: 'maxivak/optimacms'
 #gem 'optimacms', path: '/data/projects/myrails/cms/site'
 
@@ -65,7 +65,7 @@ gem 'globalize-accessors'
 gem 'haml-rails', '1.0.0'
 gem 'sass-rails', '~> 5.0.6'
 gem 'uglifier', '3.2.0'
-gem 'jquery-rails', '4.3.1' # '4.2.2','4.0.3'
+#gem 'jquery-rails', '4.3.1' # '4.2.2','4.0.3'
 gem 'font-awesome-rails', '~>4.7'
 
 
@@ -107,10 +107,11 @@ gem 'ancestry'
 
 
 # tinymce
-gem 'tinymce-rails'#, '4.1.6'
+#gem 'tinymce-rails'#, '4.1.6'
 
-# editor
-gem 'el_finder', '1.1.12'
+# elfinder
+gem 'el_finder', '1.1.13'
+
 
 #
 gem 'redis'
