@@ -28,9 +28,6 @@ config/secrets.yml
 .byebug_history
 
 
-node_modules/
-
-
 
 
 backup/.data
@@ -38,9 +35,13 @@ backup/.tmp
 backup/log
 
 
+temp/
 __temp
 node_modules/
 yarn.lock
 /vendor/assets/components/
 
 /config/secrets.yml
+
+
+pubic/assets
