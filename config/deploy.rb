@@ -15,27 +15,6 @@ set :repo_url, 'git@github.com:maxivak/rails-base-app.git'
 
 
 
-#
-set :rsync_options, %w[
-  --recursive --delete --delete-excluded
-  --exclude .git*
-  --exclude /test/***
-]
-
-
-
-#role :app, %w{11.22.33.44}
-#role :web, %w{11.22.33.44}
-#role :db,  %w{11.22.33.44}
-
-
-
-#set :user, 'myuser'
-#set :group, 'dev'
-set :deploy_user, 'app'
-
-#set :ssh_options, { forward_agent: true, user: 'app' }
-#set :pty, true
 
 
 # Default value for :scm is :git
@@ -62,18 +41,14 @@ set :keep_releases, 10
 my_config_dirs = %W{config config/environments}
 my_config_files = %W{config/database.yml config/secrets.yml config/environments/#{fetch(:stage)}.rb }
 my_app_dirs = SHARED_DIRS
-#my_app_dirs = AppdataSettings.deploy_dirs_exclude(fetch(:rails_env))
 
 
 # do not change below
 set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle')
 set :linked_dirs, fetch(:linked_dirs) + my_app_dirs
-#set :linked_dirs, -> {base_linked_dirs + AppdataSettings.deploy_dirs_exclude(fetch(:rails_env)) }
-
 set :linked_files, fetch(:linked_files, []) + my_config_files
 
 set :config_dirs,  my_config_dirs+my_app_dirs
-#set :config_dirs,  -> {my_config_dirs+AppdataSettings.deploy_dirs_exclude(fetch(:rails_env))}
 set :config_files, my_config_files
 
 
