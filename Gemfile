@@ -42,7 +42,7 @@ gem 'omniauth-linkedin'
 #gem 'certified'
 
 
-gem 'optimacms', '0.3.34'
+gem 'optimacms', '0.3.35'
 #gem 'optimacms', github: 'maxivak/optimacms'
 #gem 'optimacms', path: '/data/projects/myrails/cms/site'
 
