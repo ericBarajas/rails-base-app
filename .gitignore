@@ -23,10 +23,21 @@ config/secrets.yml
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+temp/
+__temp
+
 
 # Ignore Byebug command history file.
 .byebug_history
 
+
+/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity
+/yarn-error.log
+yarn.lock
 
 
 
@@ -35,13 +46,9 @@ backup/.tmp
 backup/log
 
 
-temp/
-__temp
-node_modules/
-yarn.lock
 /vendor/assets/components/
 
-/config/secrets.yml
+
 
 
 pubic/assets

@@ -1,8 +1,5 @@
 //== Colors
-
-
 $primary: #3f51b5;
-
 $secondary: #ff9800;
 
 
@@ -66,7 +63,7 @@ $secondary-dark: #c66900;
 
 // reassign color scheme
 $theme-colors: (
-        primary: $primary,
-        secondary: $secondary,
+  primary: $primary,
+  secondary: $secondary,
 
 );
