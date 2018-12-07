@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   # optimacms devise
   devise_for :cms_admin_users, Optimacms::Devise.config
 
-  match 'demo/:action', to: 'demo#action', via: [:get, :post], as: 'demo'
-
   if Rails.env.development?
     match 'debug/:action', to: 'debug#action', via: [:get, :post], as: 'debug'
   end
