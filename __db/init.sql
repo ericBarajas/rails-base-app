@@ -3,16 +3,12 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Apr 02, 2018 at 02:32 PM
+-- Generation Time: Dec 07, 2018 at 03:01 PM
 -- Server version: 5.7.15
 -- PHP Version: 5.6.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
---
--- Database: `my_base_app`
---
 
 -- --------------------------------------------------------
 
@@ -79,17 +75,6 @@ CREATE TABLE `cms_mediafiles` (
   `photo_updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `cms_mediafiles`
---
-
-INSERT INTO `cms_mediafiles` (`id`, `media_type`, `path`, `photo_file_name`, `photo_content_type`, `photo_file_size`, `photo_updated_at`) VALUES
-(1, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, NULL, NULL, NULL, NULL, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -128,13 +113,9 @@ CREATE TABLE `cms_pages` (
 INSERT INTO `cms_pages` (`id`, `title`, `name`, `url`, `url_parts_count`, `url_vars_count`, `parsed_url`, `parent_id`, `view_path`, `is_translated`, `status`, `pos`, `redir_url`, `template_id`, `layout_id`, `owner`, `is_folder`, `controller_action`, `created_at`, `updated_at`, `enabled`) VALUES
 (12, 'error404', 'error404', 'errors/404', 2, 0, '^errors\\/404', 93, NULL, 0, 0, 15, '', 4, 1, 0, 0, '', '1970-01-01 00:00:00', '2015-05-13 23:36:54', 1),
 (13, 'error403', 'error403', 'errors/403', 2, 0, '^errors\\/403', 93, NULL, 0, 0, 14, '', 4, 1, 0, 0, '', '1970-01-01 00:00:00', '2015-05-13 23:37:09', 1),
-(24, 'Text pages', 'textpages', '', 0, 0, '', NULL, NULL, 0, 0, 12, '', 0, NULL, 0, 1, '', '1970-01-01 00:00:00', '2013-06-26 14:00:52', 1),
-(44, 'About', 'about', 'about.html', 1, 0, 'about[.]html', 24, NULL, 1, 0, 0, '', 123, 4, 0, 0, '', '1970-01-01 00:00:00', '2015-05-02 00:13:00', 1),
-(74, 'Sitemap', 'sitemap', 'sitemap.html', 1, 0, 'sitemap[.]html', NULL, NULL, 0, 0, 10, '', 128, 1, 0, 0, '', '2010-10-25 08:21:47', '2015-05-13 23:33:19', 1),
+(74, 'Sitemap', 'sitemap', 'sitemap.html', 1, 0, 'sitemap[.]html', NULL, NULL, 1, 0, 10, '', 135, 1, 0, 0, '', '2010-10-25 08:21:47', '2018-12-07 14:55:56', 1),
 (93, 'System pages', 'folder-system', 'system/', 1, 0, 'system/', NULL, NULL, 0, 0, 7, '', 0, NULL, 0, 1, '', '2013-07-05 21:38:26', '2018-01-01 00:00:00', 1),
 (97, 'Home', 'home', '', 0, 0, '^$', NULL, NULL, 0, 0, 2, '', 127, 1, 0, 0, 'home#index', '2013-07-10 10:10:21', '2017-11-24 18:04:44', 1),
-(98, 'Dev debug', 'dev', 'dev/', 1, 0, 'dev/', 93, NULL, 1, 0, 0, '', 16, NULL, 0, 0, '', '2013-07-11 02:21:30', '2018-01-01 00:00:00', 1),
-(126, 'Contacts', 'contacts', 'contacts.html', 1, 0, 'contacts[.]html', 24, NULL, 1, 0, 0, '', 4, NULL, 0, 0, '', '2014-03-15 21:27:00', '2015-03-22 01:45:36', 1),
 (153, 'error500', 'error500', 'errors/500', 2, 0, '^errors\\/500', 93, NULL, 0, 0, 0, NULL, NULL, 1, NULL, 0, '', '2015-05-13 23:37:26', '2015-05-13 23:37:26', 1);
 
 -- --------------------------------------------------------
@@ -160,15 +141,9 @@ CREATE TABLE `cms_pages_translation` (
 --
 
 INSERT INTO `cms_pages_translation` (`id`, `item_id`, `page_id`, `lang`, `meta_title`, `meta_description`, `meta_keywords`, `template_filename`) VALUES
-(229, 24, 24, 'en', '', '', '', ''),
-(232, 44, 44, 'en', '', '', '', 'main.tpl'),
-(249, 74, 74, 'en', '', '', '', 'main.tpl'),
+(249, 74, 74, 'en', 'Sitemap', '', '', 'main.tpl'),
 (255, 93, 93, 'en', '', '', '', ''),
 (259, 97, 97, 'en', 'HOME', '', '', 'main_home.tpl'),
-(260, 98, 98, 'en', '', '', '', 'blank.tpl'),
-(288, 126, 126, 'en', '', '', '', 'main.tpl'),
-(289, 126, 126, 'ru', '', '', '', 'main.tpl'),
-(290, 44, 44, 'ru', '', '', '', 'main.tpl'),
 (297, 97, 97, 'ru', '', '', '', 'main_home.tpl'),
 (333, 97, NULL, '', 'Demo App | Optima CMS', 'Demo app.', 'cms, demo', NULL),
 (334, 74, NULL, '', 'Sitemap', '', '', NULL),
@@ -213,15 +188,13 @@ CREATE TABLE `cms_templates` (
 --
 
 INSERT INTO `cms_templates` (`id`, `title`, `name`, `basename`, `basepath`, `basedirpath`, `type_id`, `tpl_format`, `pos`, `is_translated`, `created_at`, `updated_at`, `is_folder`, `enabled`, `ancestry`) VALUES
-(1, 'App layout', 'main', 'application', 'application', 'layouts/', 1, 'haml', 0, 0, '1970-01-01 00:00:00', '2015-05-13 23:11:20', 0, 1, '131'),
-(125, 'Text pages', NULL, 'textpages', 'textpages', '', NULL, NULL, NULL, 0, '2015-05-13 23:11:38', '2015-05-13 23:11:38', 1, 1, NULL),
+(1, 'App layout', 'main', 'application', 'layouts/application', 'layouts/', 1, 'haml', 0, 0, '1970-01-01 00:00:00', '2018-12-07 14:58:53', 0, 1, '131'),
 (126, 'Home', NULL, 'home', 'home', '', NULL, NULL, NULL, 0, '2015-05-13 23:12:02', '2015-05-13 23:12:02', 1, 1, NULL),
 (127, 'home', NULL, 'index', 'home/index', 'home/', 2, 'haml', NULL, 0, '2015-05-13 23:12:20', '2015-05-13 23:12:20', 0, 1, '126'),
-(128, 'Sitemap', NULL, 'sitemap', 'textpages/sitemap', 'textpages/', 2, 'html', NULL, 0, '2015-05-13 23:26:11', '2015-05-13 23:26:11', 0, 1, '125'),
-(129, 'test img', NULL, 'test_img', 'textpages/test_img', 'textpages/', 2, 'html', NULL, 0, '2015-05-17 14:19:13', '2015-05-17 14:19:13', 0, 1, '125'),
 (131, 'layouts', NULL, 'layouts', 'layouts', '', NULL, NULL, NULL, 0, '2018-03-13 17:21:50', '2018-03-13 17:21:50', 1, 1, NULL),
 (132, 'basic', NULL, 'basic', 'layouts/basic', 'layouts/', 1, 'haml', NULL, 0, '2018-03-13 17:22:45', '2018-03-13 17:22:45', 0, 1, '131'),
-(133, 'wide', NULL, 'wide', 'layouts/wide', 'layouts/', 1, 'haml', NULL, 0, '2018-03-13 17:23:02', '2018-03-13 17:23:02', 0, 1, '131');
+(134, 'sitemap', NULL, 'sitemap', 'sitemap', '', NULL, NULL, NULL, 0, '2018-12-07 14:54:27', '2018-12-07 14:54:27', 1, 1, NULL),
+(135, 'sitemap', NULL, 'sitemap', 'sitemap/sitemap', 'sitemap/', 2, 'haml', NULL, 0, '2018-12-07 14:54:41', '2018-12-07 14:54:41', 0, 1, '134');
 
 -- --------------------------------------------------------
 
@@ -244,7 +217,7 @@ INSERT INTO `cms_templates_translation` (`id`, `item_id`, `lang`) VALUES
 (2, 1, ''),
 (1, 127, ''),
 (4, 132, ''),
-(5, 133, '');
+(7, 135, '');
 
 -- --------------------------------------------------------
 
@@ -316,7 +289,7 @@ CREATE TABLE `cms_users` (
 --
 
 INSERT INTO `cms_users` (`id`, `username`, `email`, `is_superadmin`, `encrypted_password`, `reset_password_token`, `reset_password_sent_at`, `remember_created_at`, `sign_in_count`, `current_sign_in_at`, `last_sign_in_at`, `current_sign_in_ip`, `last_sign_in_ip`, `created_at`, `updated_at`) VALUES
-(3, 'admin', 'admin@example.com', 0, '$2a$10$qx6DGnJMbQ7S.QEZRMM0DOwjG5qKZwMcffC15eYcodSE8zlXgIeWe', NULL, NULL, NULL, 23, '2018-04-02 14:30:31', '2018-03-31 21:14:56', '127.0.0.1', '127.0.0.1', '2015-05-13 22:48:20', '2018-04-02 14:30:31');
+(3, 'admin', 'admin@example.com', 0, '$2a$10$qx6DGnJMbQ7S.QEZRMM0DOwjG5qKZwMcffC15eYcodSE8zlXgIeWe', NULL, NULL, NULL, 31, '2018-12-07 14:44:29', '2018-12-07 12:12:36', '127.0.0.1', '127.0.0.1', '2015-05-13 22:48:20', '2018-12-07 14:44:29');
 
 -- --------------------------------------------------------
 
@@ -466,7 +439,7 @@ ALTER TABLE `cms_languages`
 -- AUTO_INCREMENT for table `cms_mediafiles`
 --
 ALTER TABLE `cms_mediafiles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `cms_pages`
 --
@@ -481,12 +454,12 @@ ALTER TABLE `cms_pages_translation`
 -- AUTO_INCREMENT for table `cms_templates`
 --
 ALTER TABLE `cms_templates`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
 --
 -- AUTO_INCREMENT for table `cms_templates_translation`
 --
 ALTER TABLE `cms_templates_translation`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `cms_templatetypes`
 --
@@ -506,4 +479,4 @@ ALTER TABLE `cms_users`
 -- AUTO_INCREMENT for table `options`
 --
 ALTER TABLE `options`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
