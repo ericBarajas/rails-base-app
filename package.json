@@ -1,6 +1,7 @@
 {
   "name": "myapp",
   "version": "1.0.0",
+  "private": true,
   "main": "index.js",
   "repository": "git@github.com:maxivak/rails-base-app.git",
   "author": "mmx <maxivak@gmail.com>",

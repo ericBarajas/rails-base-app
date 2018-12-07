@@ -1,26 +1,28 @@
 ﻿source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.4.5"
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
 
 
-gem 'rails', '~> 5.1.6'
+
+gem 'rails', '5.2.2'
 
 
 # Use Puma as the app server
 group :development, :test do
-  gem 'puma', '~> 3.7'
+  gem 'puma', '~> 3.11'
 end
 
 #
 gem 'mysql2', '0.4.10'
 
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.1.0', require: false
+
+
 #
-gem 'devise', '4.3.0' #, '3.5.6'
+gem 'devise', '4.5.0' #, '3.5.6'
 
 
 if Bundler::WINDOWS
@@ -82,7 +84,6 @@ gem "loofah", ">= 2.2.3"
 
 
 #
-
 gem 'rack-cache'
 gem 'redis-rails'
 
@@ -106,7 +107,7 @@ gem 'jbuilder'
 
 gem 'kaminari'
 
-gem 'simple_form', '3.5.0'
+gem 'simple_form', '4.1.0'
 gem 'simple_search_filter', '0.1.1'
 gem 'bootstrap_autocomplete_input', '0.2.0'
 
@@ -161,7 +162,7 @@ end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
