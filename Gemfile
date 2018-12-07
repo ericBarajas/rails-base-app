@@ -75,7 +75,14 @@ gem 'haml-rails', '1.0.0'
 #
 gem 'rails-i18n', '~> 5.0'
 
+# sys gems
+gem "rack", ">= 2.0.6"
+gem "loofah", ">= 2.2.3"
+
+
+
 #
+
 gem 'rack-cache'
 gem 'redis-rails'
 
