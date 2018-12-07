@@ -1,6 +1,6 @@
 ﻿source 'https://rubygems.org'
 
-ruby "2.4.2"
+ruby "2.4.5"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -44,8 +44,8 @@ gem 'omniauth-linkedin'
 
 #gem 'optimacms', '0.3.35'
 #gem 'optimacms', github: 'maxivak/optimacms'
-gem 'optimacms', git: 'https://github.com/maxivak/optimacms.git', branch: 'webpack'
-#gem 'optimacms', path: '/data/projects/my-cms/site'
+#gem 'optimacms', git: 'https://github.com/maxivak/optimacms.git', branch: 'webpack'
+gem 'optimacms', path: '/data/projects/my-cms/site'
 
 gem 'simple_options', '0.0.5'
 gem 'optimacms_options', '0.0.10'
@@ -175,7 +175,4 @@ group :development, :test do
 
 end
 
-group :development do
-
-end
 
