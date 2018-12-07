@@ -4,9 +4,11 @@ $fa-font-path: "~font-awesome/fonts";
 
 
 //
-@import '../../src/optimacms/stylesheets/admin_variables';
+@import '../../src/optimacms/stylesheets/application_variables';
 
 // Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap';
 
 
+//
+@import '../../src/optimacms/stylesheets/application_styles';
