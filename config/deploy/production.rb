@@ -6,7 +6,7 @@ set :branch, "master"
 
 # rvm
 set :rvm_type, :system
-set :rvm_ruby_version, '2.4.2'
+set :rvm_ruby_version, '2.4.5'
 
 
 # server

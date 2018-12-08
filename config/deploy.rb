@@ -9,7 +9,7 @@ set :log_level, :debug
 
 #set :rvm_type, :system
 set :rvm_type, :user
-set :rvm_ruby_version, '2.3.3'
+set :rvm_ruby_version, '2.4.5'
 
 set :repo_url, 'git@github.com:maxivak/rails-base-app.git'
 
@@ -44,7 +44,7 @@ my_app_dirs = SHARED_DIRS
 
 
 # do not change below
-set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle')
 set :linked_dirs, fetch(:linked_dirs) + my_app_dirs
 set :linked_files, fetch(:linked_files, []) + my_config_files
 
