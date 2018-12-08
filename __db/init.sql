@@ -3,12 +3,16 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Dec 07, 2018 at 03:01 PM
+-- Generation Time: Dec 08, 2018 at 02:35 PM
 -- Server version: 5.7.15
 -- PHP Version: 5.6.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
+--
+-- Database: `my_base_app_init`
+--
 
 -- --------------------------------------------------------
 
@@ -157,6 +161,60 @@ INSERT INTO `cms_pages_translation` (`id`, `item_id`, `page_id`, `lang`, `meta_t
 (345, 153, NULL, '', '', '', '', NULL),
 (346, 153, NULL, 'en', '', '', '', NULL),
 (347, 153, NULL, 'ru', '', '', '', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cms_resources`
+--
+
+DROP TABLE IF EXISTS `cms_resources`;
+CREATE TABLE `cms_resources` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `def_value` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `enabled` tinyint(1) UNSIGNED NOT NULL DEFAULT '1'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cms_resource_categories`
+--
+
+DROP TABLE IF EXISTS `cms_resource_categories`;
+CREATE TABLE `cms_resource_categories` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `cms_resource_categories`
+--
+
+INSERT INTO `cms_resource_categories` (`id`, `name`) VALUES
+(4, 'Menu'),
+(3, 'System Messages'),
+(7, 'Common'),
+(1, 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cms_resource_translations`
+--
+
+DROP TABLE IF EXISTS `cms_resource_translations`;
+CREATE TABLE `cms_resource_translations` (
+  `id` int(11) NOT NULL,
+  `cms_resource_id` int(11) NOT NULL,
+  `locale` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `content` text COLLATE utf8_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -377,6 +435,26 @@ ALTER TABLE `cms_pages_translation`
   ADD KEY `lang` (`lang`);
 
 --
+-- Indexes for table `cms_resources`
+--
+ALTER TABLE `cms_resources`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cms_resource_categories`
+--
+ALTER TABLE `cms_resource_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cms_resource_translations`
+--
+ALTER TABLE `cms_resource_translations`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `index_cms_resource_translations_on_cms_resource_id` (`cms_resource_id`),
+  ADD KEY `index_cms_resource_translations_on_locale` (`locale`);
+
+--
 -- Indexes for table `cms_templates`
 --
 ALTER TABLE `cms_templates`
@@ -450,6 +528,21 @@ ALTER TABLE `cms_pages`
 --
 ALTER TABLE `cms_pages_translation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=348;
+--
+-- AUTO_INCREMENT for table `cms_resources`
+--
+ALTER TABLE `cms_resources`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `cms_resource_categories`
+--
+ALTER TABLE `cms_resource_categories`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+--
+-- AUTO_INCREMENT for table `cms_resource_translations`
+--
+ALTER TABLE `cms_resource_translations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `cms_templates`
 --
