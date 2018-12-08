@@ -7,8 +7,10 @@ GIT
       activerecord (>= 4.2, < 5.3)
       request_store (~> 1.0)
 
-PATH
-  remote: /data/projects/my-cms/site
+GIT
+  remote: https://github.com/maxivak/optimacms.git
+  revision: f16a1b73f238804de49cf40a76e2122fd3966097
+  branch: webpack
   specs:
     optimacms (0.4.1)
       ancestry
@@ -80,13 +82,13 @@ GEM
     ancestry (3.0.5)
       activerecord (>= 3.2.0)
     arel (9.0.0)
-    aws-sdk (2.11.187)
-      aws-sdk-resources (= 2.11.187)
-    aws-sdk-core (2.11.187)
+    aws-sdk (2.11.188)
+      aws-sdk-resources (= 2.11.188)
+    aws-sdk-core (2.11.188)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.11.187)
-      aws-sdk-core (= 2.11.187)
+    aws-sdk-resources (2.11.188)
+      aws-sdk-core (= 2.11.188)
     aws-sigv4 (1.0.3)
     backup (5.0.0.beta.2)
       aws-sdk (~> 2)

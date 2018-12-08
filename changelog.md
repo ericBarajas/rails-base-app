@@ -1,3 +1,9 @@
+## 2018-dec
+
+* Rails 5.2
+* webpack
+
+
 ## 2018-may
 
 * js packages in yarn

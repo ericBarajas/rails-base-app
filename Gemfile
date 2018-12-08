@@ -46,8 +46,8 @@ gem 'omniauth-linkedin'
 
 #gem 'optimacms', '0.3.35'
 #gem 'optimacms', github: 'maxivak/optimacms'
-#gem 'optimacms', git: 'https://github.com/maxivak/optimacms.git', branch: 'webpack'
-gem 'optimacms', path: '/data/projects/my-cms/site'
+gem 'optimacms', git: 'https://github.com/maxivak/optimacms.git', branch: 'webpack'
+#gem 'optimacms', path: '/data/projects/my-cms/site'
 
 gem 'simple_options', '0.0.5'
 gem 'optimacms_options', '0.0.10'
