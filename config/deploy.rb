@@ -9,7 +9,7 @@ set :log_level, :debug
 
 #set :rvm_type, :system
 set :rvm_type, :user
-set :rvm_ruby_version, '2.4.5'
+set :rvm_ruby_version, '2.5.3'
 
 set :repo_url, 'git@github.com:maxivak/rails-base-app.git'
 
