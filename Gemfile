@@ -144,7 +144,7 @@ end
 
 # deployment
 group :development do
-  gem 'capistrano', '3.11.0'
+  gem "capistrano", "~> 3.11", require: false
   gem 'capistrano-rails', '1.4.0'
   gem 'capistrano-bundler'
   gem 'capistrano-rvm', '0.1.2'

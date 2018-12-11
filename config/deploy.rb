@@ -1,4 +1,8 @@
-﻿# APP SETTINGS
+# config valid for current version and patch releases of Capistrano
+lock "~> 3.11.0"
+
+
+# APP SETTINGS
 
 SHARED_DIRS = %W{public/system app/views public/uploads public/img }
 

@@ -1,12 +1,12 @@
 set :log_level, :debug
 
-﻿set :application, 'myapp'
+set :application, 'myapp'
 set :rails_env, 'production'
 set :branch, "master"
 
 # rvm
 set :rvm_type, :system
-set :rvm_ruby_version, '2.4.5'
+set :rvm_ruby_version, '2.5.3'
 
 
 # server
